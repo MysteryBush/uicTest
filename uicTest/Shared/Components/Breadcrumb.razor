@@ -1,23 +1,40 @@
 ﻿@using uicTest.Data
+@using System.Linq;
 
 <nav class="container breadcrumb-box p-2" aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="@breadcrumb.Address">@breadcrumb.Title</a></li>
-    <li class="breadcrumb-item"><a href="#">About</a></li>
-    <li class="breadcrumb-item active" aria-current="page">History</li>
-  </ol>
+    <ol class="breadcrumb">
+        @*Home*@
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        @*Clickable links*@
+        @for (int i = 0; i < @BreadcrumbList.Count - 1; i++)
+        {
+            var current = i;
+            <li class="breadcrumb-item"><a href=@BreadcrumbList[current]>@BreadcrumbList[current]</a></li>
+        }
+        @*Currently active page*@
+        <li class="breadcrumb-item active" aria-current="page">@lastItem</li>
+    </ol>
 </nav>
 
 @code {
-    //[Parameter]
-    //public string Title { get; set; } = "Set by Child";
+    [Parameter] public string pageAddress { get; set; }
+    public List<string> BreadcrumbList = new List<string>();
+    public string lastItem;
 
-    [Parameter]
-    public BreadcrumbItem breadcrumb { get; set; } =
-        new()
-            {
-                Title = "Set by child.",
-                Address = "#",
-                Activated = false
-            };
+    public void addList()
+    {
+        foreach (string item in pageAddress.Split('/'))
+        {
+            BreadcrumbList.Add(item);
+        }
+        lastItem = BreadcrumbList[BreadcrumbList.Count - 1];
+    }
+
+    //Blazor Pages, Routing, and Layouts [4 of 11] | Blazor for Beginners
+    //https://youtu.be/dMc-S8VkbIE?t=592
+    protected override void OnParametersSet()
+    {
+        addList();
+        base.OnParametersSet();
+    }
 }

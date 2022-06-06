@@ -12,8 +12,8 @@
 <Jumbotron Title="History">
     Prince of Songkla University International College
 </Jumbotron>
-@*<Breadcrumb />
-    <Breadcrumb breadcrumbItem="@(new BreadcrumbItem() { Title = "Home", Address = "#", Activated = false})" />*@
+@*Breadcrumb*@
+<Breadcrumb pageAddress=@pageAddress></Breadcrumb>
 
 @*Content*@
 <ContentSection>
@@ -35,5 +35,5 @@
     </div>
 </ContentSection>
 @code {
-
+    public string pageAddress = "About/History";
 }
