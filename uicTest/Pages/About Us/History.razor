@@ -1,0 +1,39 @@
+﻿@page "/History"
+
+@using uicTest.Data
+@using uicTest.Shared.Components
+@using uicTest.Shared.Layout
+@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+<PageTitle>History</PageTitle>
+
+@*Header*@
+<Jumbotron Title="History">
+    Prince of Songkla University International College
+</Jumbotron>
+@*<Breadcrumb />
+    <Breadcrumb breadcrumbItem="@(new BreadcrumbItem() { Title = "Home", Address = "#", Activated = false})" />*@
+
+@*Content*@
+<ContentSection>
+    <div class="row">
+        <div class="col-md">
+            <img src="http://uic.local/wp-content/uploads/2022/05/lrc.c0d994c6.jpg" class="" alt="Image">
+        </div>
+        <div class="col-md">
+            <p>
+                Many of the significant changes in higher education in Thailand over the last fifteen years have taken place as a result of shifts in government policy towards education (Office of the Education Council, 2004). In creating the UIC, these policy changes must be embraced and a number of other important factors also have to be taken into account English will be the medium of instruction and this will have critical implications for the recruitment of both staff and students as well as the way in which UIC’s programs are delivered. When locating the proposed college PSU’s status as a multi-campus University must be taken into account.
+            </p>
+            <p>
+                The College can act as a means of enhancing the university’s national and international standing, and emphasis needs to be placed on fields of study and niche subjects that are peculiar to Southern Thailand.
+            </p>
+            <p>
+                While this latter strategy should ensure that the UIC will give added value to PSU, it will require planning that takes into account the current educational, economic and social background. Recent Government-driven changes in higher education in Thailand provide windows of opportunity for Prince of Songkla University: the proposed UIC should be seen as a means of exploiting those opportunities.
+            </p>
+        </div>
+    </div>
+</ContentSection>
+@code {
+
+}

@@ -1,0 +1,46 @@
+﻿// https://developer.chrome.com/blog/custom-scrollbar
+
+.container-scroll {
+    overflow: scroll;
+}
+
+.spacer-scroll {
+    display: block;
+    height: 500px;
+}
+
+.box-scroll {
+    transform: matrix3d( 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1 ) translateZ(-2px);
+}
+
+/* width */
+/*::-webkit-scrollbar {
+    width: 10px;*/
+    /* Button */
+    /*&-button {
+        width: 10px;
+    }*/
+    /* Track */
+    /*&-track {
+        background: #f1f1f1;*/
+        /* Top Track */
+        /*&-piece {
+        }
+    }*/
+    /* Handle */
+    /*&-thumb {
+        background: #888;*/
+        /* Handle on hover */
+        /*&:hover {
+            background: #555;
+        }
+    }*/
+    /* Corner */
+    /*&-corner {
+        
+    }
+}*/
+
+/*::-webkit-resizer {
+
+}*/

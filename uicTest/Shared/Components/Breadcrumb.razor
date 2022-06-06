@@ -1,0 +1,23 @@
+﻿@using uicTest.Data
+
+<nav class="container breadcrumb-box p-2" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="@breadcrumb.Address">@breadcrumb.Title</a></li>
+    <li class="breadcrumb-item"><a href="#">About</a></li>
+    <li class="breadcrumb-item active" aria-current="page">History</li>
+  </ol>
+</nav>
+
+@code {
+    //[Parameter]
+    //public string Title { get; set; } = "Set by Child";
+
+    [Parameter]
+    public BreadcrumbItem breadcrumb { get; set; } =
+        new()
+            {
+                Title = "Set by child.",
+                Address = "#",
+                Activated = false
+            };
+}

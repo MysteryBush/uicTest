@@ -1,0 +1,817 @@
+﻿@use 'sass:color';
+@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+/* #region Sass Variables, @mixin, @import */
+
+/* Font */
+$font-family: "PSU Stidti";
+$font-family-src: url("../fonts/PSUStidti.ttf");
+$font-stack: $font-family, $font-family-src;
+
+@font-face {
+    font-family: $font-family;
+    src: $font-family-src;
+}
+
+@mixin font-style($font-family: $font-family, $size: 40px, $line-height: 41px, $weight: 400, $align: start, $color: $light-color) {
+    font: {
+        family: $font-family;
+        style: normal;
+        weight: $weight;
+        size: $size;
+    }
+
+    line-height: $line-height;
+    text-align: $align;
+    color: $color;
+}
+
+/* Color */
+/* Color - Main */
+$light-color: #FFFFFF;
+$dark-color: #333333;
+$middle-color: #C4C4C4;
+$highlight-color: #FF0000;
+$primary-color: #003364;
+$secondary-color: #3A5E80;
+$tertiary-color: #69859F;
+
+/* Color - Apply to component*/
+
+$nav-color: $secondary-color;
+$footer-color: $secondary-color;
+/* Assets */
+
+$Background-Image-Cover: url(../images/psuic-background-image-alpha.png);
+
+/* Media Resolution */
+
+/* Media Resolution - Bootstrap Default Breakpoints */
+$grid-breakpoints-xs: 0px;
+$grid-breakpoints-sm: 576px;
+$grid-breakpoints-md: 768px;
+$grid-breakpoints-lg: 992px;
+$grid-breakpoints-xl: 1200px;
+$grid-breakpoints-xxl: 1400px;
+
+/* Media Resolution - Custom Media Resolution */
+$navbar-large-width: 1600px;
+$footer-large-width: 1100px;
+$footer-force-width: 737.78px;
+
+/* Media Resolution - Use this for @media resolution */
+@mixin media($screen-width, $max-width: 0) {
+
+    @if $max-width != 0 {
+        @media (min-width: $screen-width) and (max-width: $max-width) {
+            @content
+        }
+    }
+
+    @else {
+        @media (min-width: $screen-width) {
+            @content
+        }
+    }
+}
+
+/* wait what is this? */
+@include media($footer-force-width) {
+    .force-justify-start p {
+        display: flex;
+        justify-items: start;
+    }
+}
+
+/* remove padding and margin */
+@mixin no-padding-margin {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* I know that I'm pasting the code here twice but perhap I'll know a better way */
+/* This mixin is for preventing text selection */
+@mixin prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+
+@import "element";
+
+@import "bootstrap";
+
+/* #endregion */
+
+/* #region DOM Element / Global Styling */
+
+html, body {
+    font-family: $font-family, Helvetica, Arial, sans-serif;
+    height: 100px;
+    scroll-behavior: smooth;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    flex-grow: 1;
+}
+
+h1, h2, h3, h4, h5 {
+    @include prevent-select;
+}
+
+h1:focus {
+    outline: none;
+}
+
+a, .btn-link {
+    color: #0071c1;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* #endregion */
+
+/* #region Global Classes For Global Use */
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+/* This is going to be used for titles in header-home */
+.text-shadow {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* box-shadow */
+.box-shadow {
+    box-shadow: 0px 7px 13px rgba(0, 0, 0, 0.5);
+}
+
+/* image background */
+
+.image-bg {
+    overflow: hidden;
+    background-image: url(../images/psuic-background-image-alpha.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+    height: 100%;
+}
+
+.color-overlay {
+    background: rgba(85, 85, 85, 1);
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
+}
+
+/* .jumbotron */
+.jumbotron {
+    height: 200px;
+    background-color: $primary-color;
+}
+
+@include media($grid-breakpoints-md) {
+    .jumbotron {
+        height: 400px;
+    }
+}
+
+/* #endregion */
+
+/* #region layout classes */
+
+.content-container {
+    background-color: $middle-color;
+
+    p {
+        text-align: justify;
+    }
+}
+
+/* #endregion */
+/* #region Classes to work with Bootstraps */
+/*Background color and sizing for breadcrumb*/
+/*Add this class at the Nav parent of breadcrumb*/
+.breadcrumb-box {
+    background-color: $light-color;
+}
+
+%linked-text-color {
+    a {
+        color: $light-color;
+    }
+}
+/* #endregion */
+
+/* #region Navbar */
+$navbar-height: 100px;
+
+@mixin nav-text {
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 34px;
+    color: $light-color;
+    text-decoration: none;
+}
+
+nav {
+    background-color: $nav-color;
+    /*z-index: 5;*/
+
+    > .container-fluid {
+        @include no-padding-margin;
+    }
+}
+
+.navbar-expand {
+    /* remove padding and margin from .navbar-expand */
+    .navbar-nav {
+        @include no-padding-margin;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+        background-color: $secondary-color;
+        z-index: 5;
+        position: absolute;
+        top: 100px;
+        right: 0px;
+        padding: 20px;
+        padding-top: 0px;
+        width: 330px;
+    }
+
+    .nav-link {
+        padding: 0px !important;
+    }
+    /* make navbar appear on smaller screen*/
+    .navbar-toggler {
+        display: block;
+        /* START of Blazor's default */
+        /*background-color: rgba(255, 255, 255, 0.1);*/
+        /*background-color: $light-color;*/
+        /* END of Blazor's default */
+        /*background-color: transparent;*/
+        /* temporary background-color until navbar icon is succesfully added */
+        background-color: color.adjust($light-color, $alpha: -0.9);
+        @debug color.adjust($light-color, $alpha: -0.9);
+        position: absolute;
+        right: 30px;
+        color: $light-color;
+
+        &-icon {
+        }
+    }
+
+
+    .navbar-collapse {
+        /* Collapse the sidebar for small screens */
+        display: none !important;
+    }
+
+    .collapse {
+        display: none;
+    }
+}
+
+nav-items-bar {
+    height: $navbar-height;
+    display: flex;
+    flex-direction: row;
+    /*align-items: center;*/
+    justify-content: end;
+    padding: 0px 29px 0px 70px;
+    gap: 100px;
+}
+
+.navbar {
+    height: $navbar-height;
+    @include no-padding-margin;
+    display: flex;
+    justify-content: end;
+
+    .nav-languages {
+        @include no-padding-margin;
+        margin: 0px;
+        list-style-type: none;
+        width: 53px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a, p {
+            @include nav-text;
+            @include font-style($size: 16px, $line-height: 27px);
+            margin: 0px;
+        }
+    }
+}
+
+.navbar-brand {
+    /* START of Blazor's default */
+    /*font-size: 1.1rem;*/
+    /*padding: 0.5rem;*/
+    /*height: 3.5rem;*/
+    /* END of Blazor's default */
+    @include no-padding-margin;
+
+    img {
+        @include no-padding-margin;
+        margin-left: 35px;
+        width: 100%;
+        height: $navbar-height;
+        object-fit: cover;
+    }
+}
+
+.ul, li {
+    list-style-type: none;
+}
+/* This .oi is from Blazor's default. Will it ever be needed? */
+.oi {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+    /* This line is added to hide icons for now. Might consider to use it later */
+    display: none;
+}
+
+.nav-item {
+    /* START of Blazor's default */
+    font-size: 0.9rem;
+    /*padding: 0.5rem;*/
+
+    &:first-of-type {
+        /*padding-top: 1rem;*/
+    }
+
+    &:last-of-type {
+        /*padding-bottom: 1rem;*/
+    }
+
+    ::deep {
+
+        a {
+            color: #d7d7d7;
+            border-radius: 4px;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            line-height: 3rem;
+
+            &.active {
+                /*background-color: rgba(255,255,255,0.25);*/
+                background-color: $light-color;
+                color: white;
+            }
+
+            &:hover {
+                /*background-color: rgba(255,255,255,0.1);*/
+                background-color: $light-color;
+                color: white;
+            }
+        }
+    }
+    /* END of Blazor's default */
+
+    p {
+        @include nav-text;
+        margin: 0px;
+    }
+
+    a {
+        @include nav-text;
+
+        &:hover {
+            color: #D9D9D9;
+        }
+    }
+
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    /*color: #FFFFFF;*/
+}
+
+/* This .dropdown is started from Blazor's default CSS code */
+.dropdown {
+    &-content {
+        background-color: $secondary-color;
+        display: none;
+        position: relative;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 5;
+    }
+
+    &-show {
+        > .dropdown-content {
+            display: block;
+        }
+    }
+
+    &-item {
+        &.active, &:active {
+            background-color: $secondary-color;
+        }
+    }
+}
+
+/*@include media($navbar-large-width) {*/
+@include media($navbar-large-width) {
+    .navbar-expand {
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            top: unset;
+            margin-right: 30px;
+            width: auto;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 40px;
+            padding: 0px;
+        }
+
+        .navbar-toggler {
+            display: none;
+        }
+
+        .collapse, .navbar-collapse {
+            /* Never collapse the sidebar for wide screens */
+            display: block !important;
+        }
+    }
+
+    .navbar {
+        .nav-languages {
+            margin-right: 30px;
+            margin-left: 20px;
+        }
+    }
+    /*navbar have relative dropdown*/
+    .dropdown-content {
+        position: absolute;
+    }
+}
+/*#endregion*/
+/* #region Footer */
+
+footer {
+    background-color: $footer-color;
+
+    p, span {
+        font-family: 'PSU Stidti';
+        font-style: normal;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #FFFFFF;
+        margin: 0px;
+        font-weight: 300;
+        font-size: 11px;
+        line-height: 20px;
+    }
+
+    p.bold {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 24px;
+    }
+
+    p {
+        margin: 0px;
+    }
+}
+
+footer > .col-md:nth-child(1) {
+    flex-grow: 1;
+}
+
+footer > .col-md:nth-child(2) {
+    flex-grow: 1;
+}
+
+@media (min-width: 1200px) {
+    footer {
+        p, span {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        p.bold {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 31px;
+        }
+    }
+
+    footer > .col-md:nth-child(1) {
+        flex-grow: 10;
+    }
+
+    footer > .col-md:nth-child(2) {
+        flex-grow: 9;
+    }
+}
+/*Prevent the first footer child to set text to center prematurely*/
+@media (min-width: 737.78px) {
+    .force-justify-start p {
+        display: flex;
+        justify-items: start;
+    }
+}
+/* #endregion */
+/* #region container-popup */
+%p-margin {
+    p {
+        margin: 0px
+    }
+}
+/* container-popup */
+
+.container-popup {
+    background: #333333;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 64px;
+    max-width: 500px;
+    padding: 45px 26px;
+    gap: 10px;
+}
+/* placeholder text class */
+.text {
+    &1 {
+        font-family: 'PSU Stidti';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #FFFFFF;
+
+        @extend %linked-text-color;
+
+        @extend %p-margin;
+    }
+
+    &2 {
+        font-family: 'PSU Stidti';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #FFFFFF;
+
+        @extend %linked-text-color;
+
+        @extend %p-margin;
+    }
+}
+
+@include media($grid-breakpoints-md) {
+    .container-popup {
+        max-width: 600px;
+    }
+
+    .text1 {
+        font-size: 20px;
+        line-height: 41px;
+        font-weight: 400
+    }
+
+    .text2 {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 400
+    }
+}
+
+@include media($grid-breakpoints-xl) {
+    .container-popup {
+        max-width: 1009px;
+    }
+
+    .text1 {
+        font-size: 40px;
+        line-height: 68px;
+        font-weight: 400;
+    }
+
+    .text2 {
+        font-size: 24px;
+        line-height: 41px;
+        font-weight: 400;
+    }
+}
+/* #endregion */
+/* #region Header */
+$header-height: 980px;
+$header-height-label: 793px;
+$header-height-linear-margin: 832px;
+$header-text-margin-left: 102px;
+
+.header-home {
+    width: 100%;
+    height: $header-height;
+    display: flex;
+
+    &-text {
+        &--1 {
+            @include no-padding-margin;
+            @include font-style;
+            font-weight: 700;
+            font-size: 200px;
+            line-height: 160px;
+        }
+
+        &--2 {
+            @include no-padding-margin;
+            @include font-style;
+            font-weight: 700;
+            font-size: 96px;
+            line-height: 70px;
+        }
+
+        &--3 {
+            @include no-padding-margin;
+            @include font-style;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 50px;
+        }
+
+
+        &--4 {
+            @include no-padding-margin;
+            @include font-style;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 68px;
+            letter-spacing: 0.22em;
+        }
+    }
+
+    &__cover {
+        /* Using math for calculating responsive ness*/
+        /*width: 1289px;*/
+        @debug 1289% / 1920% * 100%;
+        width: 1289% / 1920% * 100%;
+        height: 100%;
+        justify-self: start;
+        background: url(../images/header-home-cover.png);
+        background-size: cover;
+
+        &-container {
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            display: flex;
+            justify-content: end;
+        }
+    }
+
+    &__container {
+        height: 100%;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+    }
+
+    &__left {
+        /* Using math for calculating responsive ness*/
+        /*width: 1101px;*/
+        @debug 1101% / 1920% * 100%;
+        width: 1101% / 1920% * 100%;
+        height: 980px;
+        background: url(../images/header-home-background.png);
+        background-size: cover;
+        z-index: 2;
+    }
+
+    &__label {
+        width: 1051px;
+        height: 134px;
+        background: url(../images/header-home-background-label.png);
+        background-size: cover;
+        position: absolute;
+        margin-top: $header-height-label;
+        padding-left: $header-text-margin-left;
+        z-index: 3;
+
+        p {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__title-box {
+        width: 1795px;
+        height: 431px;
+        position: absolute;
+        z-index: 3;
+        background-color: none;
+        margin-top: 250px;
+        padding-left: $header-text-margin-left;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        gap: 30px;
+    }
+    /* This is the box that gives fading effect for the header*/
+    &__linear {
+        width: 100%;
+        height: 191px;
+        background: url(../images/header-home-linear.png);
+        position: absolute;
+        margin-top: $header-height-linear-margin;
+        z-index: 2;
+    }
+
+    &__box {
+        &-container {
+            width: 100%;
+            position: absolute;
+            overflow: hidden;
+            z-index: 3;
+        }
+        /* Using math for calculating responsive ness*/
+        /*width: 1101px;*/
+        @debug 1542px / 1920% * 100%;
+        /*margin-left: 1542% / 1920% * 100%;*/
+        margin-left: 1542% / 1920% * 100%;
+        margin-top: 707px;
+        width: 439px;
+        height: 232px;
+        padding: 14px 17px;
+        background: #FFFFFF;
+        border-radius: 30px 30px 0px 0px;
+
+
+        &__image {
+            width: 403px;
+            height: 199px;
+            background: url(../images/header-home-box.png);
+            background-size: cover;
+            filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.2));
+            border-radius: 30px;
+            display: flex;
+            text-align: center;
+            align-items: end;
+        }
+
+        &-textbox {
+            width: 403px;
+            height: 52px;
+            background: #000000;
+            border-radius: 0px 0px 30px 30px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &-vertical-text {
+        @include font-style;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        color: rgba(0,0,0,0);
+        -webkit-text-stroke: white 2px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 41px;
+        text-align: center;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        /*border: 1px solid #FFFFFF;*/
+        outline: 1px;
+        outline-color: $light-color;
+    }
+}
+/* #endregion */
+
+@import "custom/_hide-scroll.scss";
+/*@import "custom/_custom-scroll.scss";*/
+/*@import "custom/_simple-bar.scss";*/
+
+@import "blazor";

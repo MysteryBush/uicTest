@@ -1,0 +1,96 @@
+﻿@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+<div class="card shadow mb-3">
+    <div class="row g-0 @flex">
+        <div class="@cardClass">
+            <img src="@Img" class="img-fluid rounded-start" alt="Card Image">
+        </div>
+        <div class="@cardClass">
+            <div class="card-body position-relative">
+                <h4 class="card-title">@Title</h4>
+                <p class="card-text">@ChildContent</p>
+                <a href="#" class="card-link text-end">Read more...</a>
+                @* empty card-text just to give more content space at its bottom *@
+                <p class="card-text"></p>
+                <div class="position-absolute bottom-0 end-0">
+                    <p class="mx-3">@Date</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string flex = "";
+    private string cardClass = "";
+    [Parameter]
+    public string @Title { get; set; } = "Title";
+    [Parameter]
+    public string @Img { get; set; } = "https://cdn.pixabay.com/photo/2020/08/25/18/28/workplace-5517744_960_720.jpg";
+    [Parameter]
+    public string @Date { get; set; } = "Day Month Year";
+    [Parameter]
+    public bool @Flip { get; set; } = false;
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public string @Mode { get; set; } = "";
+
+    private void SwitchMode()
+    {
+        switch (@Mode)
+        {
+            case "" or "v":
+                cardClass = "";
+                break;
+            case "h":
+                cardClass = "col-6";
+                break;
+            case "v-h":
+                cardClass = "col-md-6";
+                break;
+            default:
+                cardClass = "";
+                Console.WriteLine("Using default switch");
+                break;
+        }
+        return;
+    }
+
+    private void FlipMode()
+    {
+        switch (@Flip)
+        {
+            case false:
+                flex = "";
+                break;
+            //flip image and content position
+            case true:
+                flex = "d-flex flex-row-reverse";
+                break;
+        }
+        return;
+    }
+
+    //Blazor Pages, Routing, and Layouts [4 of 11] | Blazor for Beginners
+    //https://youtu.be/dMc-S8VkbIE?t=592
+    protected override void OnParametersSet()
+    {
+        SwitchMode();
+        FlipMode();
+        base.OnParametersSet();
+    }
+
+    /*
+    call a function at Page Load (event name)
+    https://stackoverflow.com/a/61554592
+    protected override async Task OnInitializedAsync()
+    {
+        SwitchMode();
+        FlipMode();
+        await Task.Delay(1);
+    }
+    */
+}

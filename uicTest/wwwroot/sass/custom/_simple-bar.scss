@@ -1,0 +1,6 @@
+﻿/* SimpleBar */
+
+/* Reinstate scrolling for non-JS clients */
+.simplebar-content-wrapper {
+    overflow: auto;
+}

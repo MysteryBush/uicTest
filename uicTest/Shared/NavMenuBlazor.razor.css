@@ -1,0 +1,93 @@
+/*.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.1);
+}*/
+
+/* I'm not going to use .top-row */
+/*.top-row {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}*/
+
+/*.navbar-brand {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    height: 3.5rem;
+}*/
+
+/*.oi {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}*/
+
+/*.nav-item {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+}
+
+    .nav-item:first-of-type {*/
+        /*padding-top: 1rem;*/
+    /*}
+
+    .nav-item:last-of-type {*/
+        /*padding-bottom: 1rem;*/
+    /*}
+
+    .nav-item ::deep a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+        .nav-item ::deep a.active {
+            background-color: rgba(255,255,255,0.25);
+            color: white;
+        }
+
+        .nav-item ::deep a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }*/
+
+.dropdown {
+    /* position: relative;
+    display: inline-block;*/
+}
+
+/*.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: rgba(0, 0, 0);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 2;
+}
+
+.dropdown-show > .dropdown-content {
+    display: block;
+}*/
+
+/*ul {
+    list-style-type: none;
+}*/
+
+/*@media (min-width: 1400px) {
+    .navbar-toggler {
+        display: none;
+    }*/
+
+    /*navbar have relative dropdown*/
+    /*.dropdown-content {
+        position: absolute;
+    }
+
+    .collapse {*/
+        /* Never collapse the sidebar for wide screens */
+        /*display: block;
+    }
+}*/

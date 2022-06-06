@@ -1,0 +1,59 @@
+﻿@page "/"
+
+@using uicTest.Shared.Pages.Index
+@using uicTest.Shared.Layout
+@using uicTest.Shared.Components.Card
+@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+<PageTitle>PSUIC Hatyai Campus</PageTitle>
+
+@*Carousel*@
+<HomeHeader />
+
+@*Content*@
+@*<HomeNews />
+    <HomePrograms />
+    <HomeAdmission />*@
+
+<RowSection>
+    @*Title text*@
+    <div class="text-center mb-5">
+        <h1>PSUIC News</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md ">
+            <Card Mode="v-h" Flip=true Title="Breaking news #1"
+                  Img="https://cdn.pixabay.com/photo/2020/08/25/18/28/workplace-5517744_960_720.jpg">
+                here's some text
+            </Card>
+        </div>
+        <!-- Force next columns to break to new line -->
+        <div class="w-100"></div>
+
+        @*2nd-4th cards*@
+        <div class="col-md">
+            <Card Mode="" Title="Breaking news #2">
+                here's some text
+            </Card>
+        </div>
+        <div class="col-md">
+            <Card Mode="" Title="Breaking news #3">
+                here's some text
+            </Card>
+        </div>
+        <div class="col-md">
+            <Card Mode="" Title="Breaking news #4">
+                here's some text
+            </Card>
+        </div>
+    </div>
+    @*More News Button*@
+    <div class="text-center my-5">
+        <a href="#" >More</a>
+    </div>
+</RowSection>
+@code {
+
+}

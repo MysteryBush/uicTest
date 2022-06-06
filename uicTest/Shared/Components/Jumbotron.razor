@@ -1,0 +1,20 @@
+﻿<div class="jumbotron jumbotron-fluid prevent-select">
+    <div class="row d-flex justify-content-center align-content-center h-100">
+        <div class="text-center text-white">
+            <h1>@Title</h1>
+            @*<p>@Desc</p>*@
+            <p>
+                @ChildContent
+            </p>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string @Title { get; set; } = "Title";
+    @*[Parameter]
+    public string @Desc { get; set; } = "Description";*@
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}
