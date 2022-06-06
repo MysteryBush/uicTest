@@ -166,7 +166,7 @@ a, .btn-link {
 /* #endregion */
 /* #region layout classes */
 .content-container {
-  background-color: #C4C4C4;
+  /*background-color: $middle-color;*/
 }
 .content-container p {
   text-align: justify;
