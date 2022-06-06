@@ -195,6 +195,14 @@ nav > .container-fluid {
   margin: 0px;
 }
 
+.navbar-desktop {
+  display: none;
+}
+
+.navbar-mobile {
+  display: block;
+}
+
 .navbar-expand {
   /* remove padding and margin from .navbar-expand */
   /* make navbar appear on smaller screen*/
@@ -318,6 +326,7 @@ nav-items-bar {
 }
 
 .nav-item {
+  width: 100%;
   /* START of Blazor's default */
   font-size: 0.9rem;
   /*padding: 0.5rem;*/
@@ -391,6 +400,15 @@ nav-items-bar {
 
 /*@include media($navbar-large-width) {*/
 @media (min-width: 1600px) {
+  .navbar-desktop {
+    display: block;
+  }
+  .nav-item {
+    width: auto;
+  }
+  .navbar-expand {
+    /* hide mobile version navbar */
+  }
   .navbar-expand .navbar-nav {
     display: flex;
     flex-direction: row;
@@ -409,6 +427,9 @@ nav-items-bar {
   .navbar-expand .collapse, .navbar-expand .navbar-collapse {
     /* Never collapse the sidebar for wide screens */
     display: block !important;
+  }
+  .navbar-expand .navbar-mobile {
+    display: none !important;
   }
   .navbar .nav-languages {
     margin-right: 30px;

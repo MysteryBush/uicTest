@@ -7,10 +7,103 @@
         <a class="navbar-brand align-self-baseline" href="">
             <img src="../images/psuic-logo.png" alt="">
         </a>
-        <button class="navbar-toggler"  @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon">
+                <svg class="svg-inline--fa fa-bars fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
+            </span>
         </button>
-        <div class="@NavMenuCssClass">
+        @*<div class="navbar-desktop">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                        <span class="oi oi-home" aria-hidden="true"></span> Home
+                    </NavLink>
+                </li>
+                <li class="nav-item dropdown" @onclick=@()>
+                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                        <span class="oi oi-plus" aria-hidden="true"></span> About Us
+                    </NavLink>
+                    <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
+                        <li><NavLink class="dropdown-item" href="downloads">Download</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="history">History</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="vision-and-mission">Vision & Mission</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="staff">Staff</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="facilities">Facilities</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="annual-report">Annual Report</NavLink></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown" @onclick=@()>
+                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                        <span class="oi oi-plus" aria-hidden="true"></span> Programs
+                    </NavLink>
+                    <ul class="dropdown-content">
+                        <li><NavLink class="dropdown-item" href="digital-media">Digital Media</NavLink></li>
+                        <li @ref=navDropDown3 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown3,@navDropDown2))>
+                            <NavLink class="nav-link">Curriculum</NavLink>
+                            <ul class="dropdown-content">
+                                <li><NavLink class="dropdown-item" href="curriculum/curriculum-structure">- Curriculum Structure</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="curriculum/study-plan">- Study Plan</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="curriculum/course-description">- Course Description</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="curriculum/academic-announcement-and-regulations">- Academic Announcement and Regulations</NavLink></li>
+                            </ul>
+                        </li>
+                        <li @ref=navDropDown4 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown4,@navDropDown2))>
+                            <NavLink class="nav-link">Cooperative Education</NavLink>
+                            <ul class="dropdown-content">
+                                <li><NavLink class="dropdown-item" href="cooperative/overview">- Overview</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="cooperative/application-process">- Application Process</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="cooperative/during-training">- During Training</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="cooperative/criteria-of-evaluation-and-scholarship-announcement">- Criteria of Evaluation and Scholarship Announcement</NavLink></li>
+                            </ul>
+                        </li>
+                        <li><NavLink class="dropdown-item" href="student-showcase">Student Showcase</NavLink></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown" @onclick=@()>
+                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                        <span class="oi oi-plus" aria-hidden="true"></span> Admission
+                    </NavLink>
+                    <ul class="dropdown-content">
+                        <li><NavLink class="dropdown-item" href="thai-education-system">Thai Education System</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="international-certificate">International Certificate</NavLink></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="general-education">
+                        <span class="oi oi-plus" aria-hidden="true"></span> General Education
+                    </NavLink>
+                </li>
+                <li class="nav-item dropdown" @onclick=@()>
+                    <NavLink class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                        <span class="oi oi-plus" aria-hidden="true"></span> International Affairs
+                    </NavLink>
+                    <ul class="dropdown-content">
+                        <li><NavLink class="dropdown-item" href="international-affairs/mou-collaborations">MOU & Collaborations</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="international-affairs/student-mobility-program">Student Mobility Program</NavLink></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="academic-service">
+                        <span class="oi oi-plus" aria-hidden="true"></span> Academic Service
+                    </NavLink>
+                </li>
+                <li>
+                    <ul class="nav-languages">
+                        <li class="">
+                            <a class="" aria-current="page" href="#">EN</a>
+                        </li>
+                        <li class="">
+                            <p class=""> | </p>
+                        </li>
+                        <li class="">
+                            <a class="" aria-current="page" href="#">TH</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>*@
+
+        <div class="navbar-mobile @NavMenuCssClass">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
@@ -102,6 +195,7 @@
                 </li>
             </ul>
         </div>
+        <div class="navbar-mobile"></div>
     </div>
 </nav>
 @code {
@@ -123,6 +217,14 @@
         collapseNavMenu = !collapseNavMenu;
     }
 
+    // desktop version
+
+    private void ToggleDropDownDesktop()
+    {
+
+    }
+
+    // mobile version
     private async void ToggleNavDropDown(ElementReference element)
     {
         await JSRuntime.InvokeVoidAsync("toggleNavDropDown", element);
