@@ -1,0 +1,187 @@
+﻿/* #region Header */
+$header-height: 980px;
+$header-height-label: 793px;
+$header-height-linear-margin: 832px;
+$header-text-margin-left: 102px;
+
+.header-home {
+    width: 100%;
+    height: $header-height;
+    display: flex;
+
+    &-text {
+        &--1 {
+            @include no-padding-margin;
+            @include font-style;
+            font-weight: 700;
+            font-size: 200px;
+            line-height: 160px;
+        }
+
+        &--2 {
+            @include no-padding-margin;
+            @include font-style;
+            font-weight: 700;
+            font-size: 96px;
+            line-height: 70px;
+        }
+
+        &--3 {
+            @include no-padding-margin;
+            @include font-style;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 50px;
+        }
+
+
+        &--4 {
+            @include no-padding-margin;
+            @include font-style;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 68px;
+            letter-spacing: 0.22em;
+        }
+    }
+
+    &__cover {
+        /* Using math for calculating responsive ness*/
+        /*width: 1289px;*/
+        @debug 1289% / 1920% * 100%;
+        width: 1289% / 1920% * 100%;
+        height: 100%;
+        justify-self: start;
+        background: url(../images/header-home-cover.png);
+        background-size: cover;
+
+        &-container {
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            display: flex;
+            justify-content: end;
+        }
+    }
+
+    &__container {
+        height: 100%;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+    }
+
+    &__left {
+        /* Using math for calculating responsive ness*/
+        /*width: 1101px;*/
+        @debug 1101% / 1920% * 100%;
+        width: 1101% / 1920% * 100%;
+        height: 980px;
+        background: url(../images/header-home-background.png);
+        background-size: cover;
+        z-index: 2;
+    }
+
+    &__label {
+        width: 1051px;
+        height: 134px;
+        background: url(../images/header-home-background-label.png);
+        background-size: cover;
+        position: absolute;
+        margin-top: $header-height-label;
+        padding-left: $header-text-margin-left;
+        z-index: 3;
+
+        p {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__title-box {
+        width: 1795px;
+        height: 431px;
+        position: absolute;
+        z-index: 3;
+        background-color: none;
+        margin-top: 250px;
+        padding-left: $header-text-margin-left;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        gap: 30px;
+    }
+    /* This is the box that gives fading effect for the header*/
+    &__linear {
+        width: 100%;
+        height: 191px;
+        background: url(../images/header-home-linear.png);
+        position: absolute;
+        margin-top: $header-height-linear-margin;
+        z-index: 2;
+    }
+
+    &__box {
+        &-container {
+            width: 100%;
+            position: absolute;
+            overflow: hidden;
+            z-index: 3;
+        }
+        /* Using math for calculating responsive ness*/
+        /*width: 1101px;*/
+        @debug 1542px / 1920% * 100%;
+        /*margin-left: 1542% / 1920% * 100%;*/
+        margin-left: 1542% / 1920% * 100%;
+        margin-top: 707px;
+        width: 439px;
+        height: 232px;
+        padding: 14px 17px;
+        background: #FFFFFF;
+        border-radius: 30px 30px 0px 0px;
+
+
+        &__image {
+            width: 403px;
+            height: 199px;
+            background: url(../images/header-home-box.png);
+            background-size: cover;
+            filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.2));
+            border-radius: 30px;
+            display: flex;
+            text-align: center;
+            align-items: end;
+        }
+
+        &-textbox {
+            width: 403px;
+            height: 52px;
+            background: #000000;
+            border-radius: 0px 0px 30px 30px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &-vertical-text {
+        @include font-style;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        color: rgba(0,0,0,0);
+        -webkit-text-stroke: white 2px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 41px;
+        text-align: center;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        /*border: 1px solid #FFFFFF;*/
+        outline: 1px;
+        outline-color: $light-color;
+    }
+}
+/* #endregion */

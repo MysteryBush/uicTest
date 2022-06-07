@@ -149,6 +149,15 @@ a, .btn-link {
     user-select: none; /* Standard syntax */
 }
 
+// This is used to make the div clickable as a whole
+.div-link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
 /* This is going to be used for titles in header-home */
 .text-shadow {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -219,6 +228,7 @@ a, .btn-link {
 
 /* #region Navbar */
 $navbar-height: 100px;
+$navbar-height-mobile: 50px;
 
 @mixin nav-text {
     font-family: $font-family;
@@ -299,7 +309,7 @@ nav {
 }
 
 nav-items-bar {
-    height: $navbar-height;
+    height: $navbar-height-mobile;
     display: flex;
     flex-direction: row;
     /*align-items: center;*/
@@ -309,7 +319,6 @@ nav-items-bar {
 }
 
 .navbar {
-    height: $navbar-height;
     @include no-padding-margin;
     display: flex;
     justify-content: end;
@@ -344,7 +353,7 @@ nav-items-bar {
         @include no-padding-margin;
         margin-left: 35px;
         width: 100%;
-        height: $navbar-height;
+        height: $navbar-height-mobile;
         object-fit: cover;
     }
 }
@@ -447,6 +456,16 @@ nav-items-bar {
 @include media($navbar-large-width) {
     .navbar-desktop {
         display: block;
+    }
+
+    .nav-items-bar .navbar {
+        height: $navbar-height;
+    }
+
+    .navbar-brand {
+        img {
+            height: $navbar-height;
+        }
     }
 
     .nav-item {
@@ -644,39 +663,38 @@ footer > .col-md:nth-child(2) {
 }
 /* #endregion */
 /* #region Header */
-$header-height: 980px;
-$header-height-label: 793px;
-$header-height-linear-margin: 832px;
-$header-text-margin-left: 102px;
+//$header-height: 980px;
+//$header-height-label: 793px;
+//$header-text-margin-left: 102px;
 
 .header-home {
-    width: 100%;
-    height: $header-height;
-    display: flex;
+    //width: 100%;
+    //display: flex;
+    //flex-direction: column;
 
     &-text {
         &--1 {
             @include no-padding-margin;
             @include font-style;
             font-weight: 700;
-            font-size: 200px;
-            line-height: 160px;
+            font-size: 48px;
+            line-height: 40px;
         }
 
         &--2 {
             @include no-padding-margin;
             @include font-style;
             font-weight: 700;
-            font-size: 96px;
-            line-height: 70px;
+            font-size: 24px;
+            line-height: 27px;
         }
 
         &--3 {
             @include no-padding-margin;
             @include font-style;
             font-weight: 700;
-            font-size: 48px;
-            line-height: 50px;
+            font-size: 16px;
+            line-height: 27px;
         }
 
 
@@ -684,8 +702,8 @@ $header-text-margin-left: 102px;
             @include no-padding-margin;
             @include font-style;
             font-weight: 700;
-            font-size: 40px;
-            line-height: 68px;
+            font-size: 16px;
+            line-height: 27px;
             letter-spacing: 0.22em;
         }
     }
@@ -694,18 +712,21 @@ $header-text-margin-left: 102px;
         /* Using math for calculating responsive ness*/
         /*width: 1289px;*/
         @debug 1289% / 1920% * 100%;
-        width: 1289% / 1920% * 100%;
-        height: 100%;
-        justify-self: start;
+        //width: 1289% / 1920% * 100%;
+        width: 100%;
+        height: 230px;
+        //align-self: end;
+        //justify-self: end;
         background: url(../images/header-home-cover.png);
         background-size: cover;
 
         &-container {
-            width: 100%;
-            height: 100%;
+            //width: 100%;
+            height: 230px;
             z-index: -1;
             display: flex;
-            justify-content: end;
+            align-self: end;
+            justify-self: end;
         }
     }
 
@@ -717,25 +738,27 @@ $header-text-margin-left: 102px;
         position: absolute;
     }
 
-    &__left {
+    &__background {
         /* Using math for calculating responsive ness*/
         /*width: 1101px;*/
         @debug 1101% / 1920% * 100%;
-        width: 1101% / 1920% * 100%;
-        height: 980px;
-        background: url(../images/header-home-background.png);
-        background-size: cover;
-        z-index: 2;
+        //width: 1101% / 1920% * 100%;
+        height: 150px;
+        background-color: rgba(0, 60, 113, 1);
+        //background-size: cover;
+        //z-index: 2;
     }
 
     &__label {
-        width: 1051px;
-        height: 134px;
-        background: url(../images/header-home-background-label.png);
-        background-size: cover;
-        position: absolute;
-        margin-top: $header-height-label;
-        padding-left: $header-text-margin-left;
+        width: 100%;
+        height: 50px;
+        //background: url(../images/header-home-background-label.png);
+        background-color: rgba(58, 94, 128, 1);
+        box-shadow: 0px -5px 13px rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        //background-size: cover;
+        //margin-top: $header-height-label;
+        //padding-left: $header-text-margin-left;
         z-index: 3;
 
         p {
@@ -746,51 +769,45 @@ $header-text-margin-left: 102px;
     }
 
     &__title-box {
-        width: 1795px;
-        height: 431px;
-        position: absolute;
+        //width: 1795px;
+        //height: 431px;
+        //position: absolute;
         z-index: 3;
         background-color: none;
-        margin-top: 250px;
-        padding-left: $header-text-margin-left;
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        gap: 30px;
-    }
-    /* This is the box that gives fading effect for the header*/
-    &__linear {
-        width: 100%;
-        height: 191px;
-        background: url(../images/header-home-linear.png);
-        position: absolute;
-        margin-top: $header-height-linear-margin;
-        z-index: 2;
+        //margin-top: 250px;
+        //padding-left: $header-text-margin-left;
+        //display: flex;
+        //flex-direction: column;
+        //justify-items: center;
+        //gap: 30px;
     }
 
     &__box {
-        &-container {
-            width: 100%;
-            position: absolute;
-            overflow: hidden;
-            z-index: 3;
-        }
+        //width: 157.43px;
         /* Using math for calculating responsive ness*/
         /*width: 1101px;*/
         @debug 1542px / 1920% * 100%;
         /*margin-left: 1542% / 1920% * 100%;*/
-        margin-left: 1542% / 1920% * 100%;
-        margin-top: 707px;
-        width: 439px;
-        height: 232px;
-        padding: 14px 17px;
-        background: #FFFFFF;
-        border-radius: 30px 30px 0px 0px;
+        //margin-left: 1542% / 1920% * 100%;
+        //margin-top: 707px;
+        //width: 439px;
+        //height: 232px;
+        padding: 4px;
+        background: rgba(58, 94, 128, 1);
+        border-radius: 30px;
+
+        &-container {
+            //width: 100%;
+            //height: 100px;
+            //position: absolute;
+            //overflow: hidden;
+            z-index: 3;
+        }
 
 
         &__image {
-            width: 403px;
-            height: 199px;
+            width: 148.26px;
+            height: 68.26px;
             background: url(../images/header-home-box.png);
             background-size: cover;
             filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.2));
@@ -802,7 +819,7 @@ $header-text-margin-left: 102px;
 
         &-textbox {
             width: 403px;
-            height: 52px;
+            height: 16.51px;
             background: #000000;
             border-radius: 0px 0px 30px 30px;
             text-align: center;
@@ -827,6 +844,162 @@ $header-text-margin-left: 102px;
         /*border: 1px solid #FFFFFF;*/
         outline: 1px;
         outline-color: $light-color;
+    }
+
+    @include media($grid-breakpoints-md) {
+        .header-home {
+            &__background {
+                width: 43%;
+                height: 545px;
+            }
+
+            &__cover {
+                height: 545px;
+                background-position: right;
+            }
+
+            &__cover-container {
+                width: 57%;
+                height: 545px;
+            }
+
+            &__label {
+                height: 100px;
+            }
+
+            &__box {
+                padding: 7px;
+
+                &-container {
+                }
+
+
+                &__image {
+                    width: 240.92px;
+                    height: 110.92px;
+                }
+
+                &-textbox {
+                    width: 240.92px;
+                    height: 26.83px;
+                }
+            }
+
+            &-text {
+                &--1 {
+                    font-weight: 700;
+                    font-size: 96px;
+                    line-height: 80px;
+                }
+
+                &--2 {
+                    font-weight: 700;
+                    font-size: 40px;
+                    line-height: 27px;
+                }
+
+                &--3 {
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 50px;
+                }
+
+
+                &--4 {
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 27px;
+                }
+            }
+        }
+    }
+
+    @include media($grid-breakpoints-xxl) {
+        .header-home {
+            &__background {
+                height: 750px;
+            }
+
+            &__cover {
+                height: 750px;
+            }
+
+            &__cover-container {
+                height: 750px;
+            }
+
+            &__label {
+                height: 150px;
+            }
+
+            &__box {
+                padding: 13px;
+
+                &-container {
+                }
+
+
+                &__image {
+                    width: 404px;
+                    height: 186px;
+                }
+
+                &-textbox {
+                    width: 404px;
+                    height: 45px;
+                }
+            }
+
+            &-text {
+                &--1 {
+                    font-weight: 700;
+                    font-size: 150px;
+                    line-height: 200px;
+                }
+
+                &--2 {
+                    font-weight: 700;
+                    font-size: 72px;
+                    line-height: 60px;
+                }
+
+                &--3 {
+                    font-weight: 700;
+                    font-size: 36px;
+                    line-height: 61px;
+                }
+
+                &--4 {
+                    font-weight: 700;
+                    font-size: 36px;
+                    line-height: 61px;
+                }
+            }
+        }
+    }
+
+    @include media(2130px) {
+        .header-home {
+            &-text {
+                &--1 {
+                    font-weight: 700;
+                    font-size: 200px;
+                    line-height: 200px;
+                }
+
+                &--2 {
+                    font-weight: 700;
+                    font-size: 96px;
+                    line-height: 60px;
+                }
+
+                &--3 {
+                    font-weight: 700;
+                    font-size: 48px;
+                    line-height: 82px;
+                }
+            }
+        }
     }
 }
 /* #endregion */
