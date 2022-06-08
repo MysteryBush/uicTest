@@ -97,12 +97,9 @@ article {
 }
 
 h1, h2, h3, h4, h5 {
-  -webkit-user-select: none;
-  /* Safari */
-  -ms-user-select: none;
-  /* IE 10 and IE 11 */
-  user-select: none;
-  /* Standard syntax */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 h1:focus {
@@ -122,12 +119,9 @@ a, .btn-link {
 /* #endregion */
 /* #region Global Classes For Global Use */
 .prevent-select {
-  -webkit-user-select: none;
-  /* Safari */
-  -ms-user-select: none;
-  /* IE 10 and IE 11 */
-  user-select: none;
-  /* Standard syntax */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .div-link {
@@ -161,7 +155,7 @@ a, .btn-link {
 }
 
 .color-overlay {
-  background: #555555;
+  background: rgb(85, 85, 85);
   overflow: hidden;
   height: 100%;
   z-index: 2;
@@ -417,19 +411,15 @@ nav-items-bar {
   .navbar-desktop {
     display: block;
   }
-
   .nav-items-bar .navbar {
     height: 100px;
   }
-
   .navbar-brand img {
     height: 100px;
   }
-
   .nav-item {
     width: auto;
   }
-
   .navbar-expand {
     /* hide mobile version navbar */
   }
@@ -455,12 +445,10 @@ nav-items-bar {
   .navbar-expand .navbar-mobile {
     display: none !important;
   }
-
   .navbar .nav-languages {
     margin-right: 30px;
     margin-left: 20px;
   }
-
   /*navbar have relative dropdown*/
   .dropdown-content {
     position: absolute;
@@ -509,11 +497,9 @@ footer > .col-md:nth-child(2) {
     font-size: 18px;
     line-height: 31px;
   }
-
   footer > .col-md:nth-child(1) {
     flex-grow: 10;
   }
-
   footer > .col-md:nth-child(2) {
     flex-grow: 9;
   }
@@ -566,13 +552,11 @@ footer > .col-md:nth-child(2) {
   .container-popup {
     max-width: 600px;
   }
-
   .text1 {
     font-size: 20px;
     line-height: 41px;
     font-weight: 400;
   }
-
   .text2 {
     font-size: 16px;
     line-height: 20px;
@@ -583,13 +567,11 @@ footer > .col-md:nth-child(2) {
   .container-popup {
     max-width: 1009px;
   }
-
   .text1 {
     font-size: 40px;
     line-height: 68px;
     font-weight: 400;
   }
-
   .text2 {
     font-size: 24px;
     line-height: 41px;
@@ -598,6 +580,17 @@ footer > .col-md:nth-child(2) {
 }
 /* #endregion */
 /* #region Header */
+@keyframes scroll-left {
+  0% {
+    right: -120%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+.header-home .row {
+  --bs-gutter-x: 0;
+}
 .header-home-text--1 {
   padding: 0px;
   margin: 0px;
@@ -681,23 +674,29 @@ footer > .col-md:nth-child(2) {
   /* Using math for calculating responsive ness*/
   /*width: 1101px;*/
   height: 150px;
-  background-color: #003c71;
+  background-color: rgb(0, 60, 113);
 }
 .header-home__label {
   width: 100%;
   height: 50px;
-  background-color: #3a5e80;
+  background-color: rgb(58, 94, 128);
   box-shadow: 0px -5px 13px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  z-index: 3;
+  overflow: hidden;
 }
 .header-home__label p {
   height: 100%;
   display: flex;
   align-items: center;
+  position: relative;
+  animation-name: scroll-left;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 2;
 }
 .header-home__title-box {
-  z-index: 3;
+  /*z-index: 3;*/
   background-color: none;
 }
 .header-home__box {
@@ -705,13 +704,15 @@ footer > .col-md:nth-child(2) {
   /*width: 1101px;*/
   /*margin-left: 1542% / 1920% * 100%;*/
   padding: 4px;
-  background: #3a5e80;
+  background: rgb(58, 94, 128);
   border-radius: 30px;
 }
 .header-home__box-container {
-  z-index: 3;
+  /*z-index: 3;*/
 }
 .header-home__box__image {
+  position: relative;
+  z-index: 3;
   width: 148.26px;
   height: 68.26px;
   background: url(../images/header-home-box.png);
@@ -868,12 +869,9 @@ footer > .col-md:nth-child(2) {
 /* #endregion */
 /* .hide-scroll */
 .hide-scroll {
-  overflow-y: scroll;
-  /* Add the ability to scroll */
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  overflow-y: scroll; /* Add the ability to scroll */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   /* Hide scrollbar for Chrome, Safari and Opera */
 }
 .hide-scroll::-webkit-scrollbar {

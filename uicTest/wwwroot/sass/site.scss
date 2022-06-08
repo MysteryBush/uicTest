@@ -666,11 +666,24 @@ footer > .col-md:nth-child(2) {
 //$header-height: 980px;
 //$header-height-label: 793px;
 //$header-text-margin-left: 102px;
+@keyframes scroll-left {
+    0% {
+        right: -120%;
+    }
+
+    100% {
+        right: 100%;
+    }
+}
 
 .header-home {
     //width: 100%;
     //display: flex;
     //flex-direction: column;
+    //remove gutter to make the header fit to the screen
+    .row {
+        --bs-gutter-x: 0;
+    }
 
     &-text {
         &--1 {
@@ -759,12 +772,18 @@ footer > .col-md:nth-child(2) {
         //background-size: cover;
         //margin-top: $header-height-label;
         //padding-left: $header-text-margin-left;
-        z-index: 3;
+        overflow: hidden;
 
         p {
             height: 100%;
             display: flex;
             align-items: center;
+            position: relative;
+            animation-name: scroll-left;
+            animation-duration: 30s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            z-index: 2;
         }
     }
 
@@ -772,7 +791,7 @@ footer > .col-md:nth-child(2) {
         //width: 1795px;
         //height: 431px;
         //position: absolute;
-        z-index: 3;
+        /*z-index: 3;*/
         background-color: none;
         //margin-top: 250px;
         //padding-left: $header-text-margin-left;
@@ -801,11 +820,13 @@ footer > .col-md:nth-child(2) {
             //height: 100px;
             //position: absolute;
             //overflow: hidden;
-            z-index: 3;
+            /*z-index: 3;*/
         }
 
 
         &__image {
+            position: relative;
+            z-index: 3;
             width: 148.26px;
             height: 68.26px;
             background: url(../images/header-home-box.png);
