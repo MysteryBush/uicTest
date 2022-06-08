@@ -588,9 +588,6 @@ footer > .col-md:nth-child(2) {
     right: 100%;
   }
 }
-.header-home .row {
-  --bs-gutter-x: 0;
-}
 .header-home-text--1 {
   padding: 0px;
   margin: 0px;

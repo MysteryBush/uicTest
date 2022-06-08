@@ -680,10 +680,6 @@ footer > .col-md:nth-child(2) {
     //width: 100%;
     //display: flex;
     //flex-direction: column;
-    //remove gutter to make the header fit to the screen
-    .row {
-        --bs-gutter-x: 0;
-    }
 
     &-text {
         &--1 {
