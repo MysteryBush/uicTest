@@ -130,7 +130,7 @@ a, .btn-link {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 5;
 }
 
 /* This is going to be used for titles in header-home */
