@@ -449,6 +449,10 @@ nav-items-bar {
         &.active, &:active {
             background-color: $secondary-color;
         }
+
+        &:hover {
+            background-color: $secondary-color;
+        }
     }
 }
 
