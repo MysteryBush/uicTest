@@ -492,13 +492,8 @@ footer p.bold {
 footer p {
   margin: 0px;
 }
-
-footer > .col-md:nth-child(1) {
-  flex-grow: 1;
-}
-
-footer > .col-md:nth-child(2) {
-  flex-grow: 1;
+footer a {
+  color: #FFFFFF;
 }
 
 @media (min-width: 1200px) {
@@ -512,22 +507,8 @@ footer > .col-md:nth-child(2) {
     font-size: 18px;
     line-height: 31px;
   }
-
-  footer > .col-md:nth-child(1) {
-    flex-grow: 10;
-  }
-
-  footer > .col-md:nth-child(2) {
-    flex-grow: 9;
-  }
 }
 /*Prevent the first footer child to set text to center prematurely*/
-@media (min-width: 737.78px) {
-  .force-justify-start p {
-    display: flex;
-    justify-items: start;
-  }
-}
 /* #endregion */
 /* #region container-popup */
 .text2 p, .text1 p {

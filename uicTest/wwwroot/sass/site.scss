@@ -541,17 +541,21 @@ footer {
     p {
         margin: 0px;
     }
+
+    a {
+        color: $light-color;
+    }
 }
 
-footer > .col-md:nth-child(1) {
-    flex-grow: 1;
-}
+//footer > .col-md:nth-child(1) {
+//    flex-grow: 1;
+//}
 
-footer > .col-md:nth-child(2) {
-    flex-grow: 1;
-}
+//footer > .col-md:nth-child(2) {
+//    flex-grow: 1;
+//}
 
-@media (min-width: 1200px) {
+@media (min-width: $grid-breakpoints-xl) {
     footer {
         p, span {
             font-weight: 400;
@@ -566,21 +570,21 @@ footer > .col-md:nth-child(2) {
         }
     }
 
-    footer > .col-md:nth-child(1) {
-        flex-grow: 10;
-    }
+    //footer > .col-md:nth-child(1) {
+    //    flex-grow: 10;
+    //}
 
-    footer > .col-md:nth-child(2) {
-        flex-grow: 9;
-    }
+    //footer > .col-md:nth-child(2) {
+    //    flex-grow: 9;
+    //}
 }
 /*Prevent the first footer child to set text to center prematurely*/
-@media (min-width: 737.78px) {
-    .force-justify-start p {
-        display: flex;
-        justify-items: start;
-    }
-}
+//@media (min-width: 737.78px) {
+//    .force-justify-start p {
+//        display: flex;
+//        justify-items: start;
+//    }
+//}
 /* #endregion */
 /* #region container-popup */
 %p-margin {
