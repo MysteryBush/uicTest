@@ -13,94 +13,7 @@
             </span>
         </button>
         @*<div class="navbar-desktop">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                        <span class="oi oi-home" aria-hidden="true"></span> Home
-                    </NavLink>
-                </li>
-                <li class="nav-item dropdown" @onclick=@()>
-                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="oi oi-plus" aria-hidden="true"></span> About Us
-                    </NavLink>
-                    <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
-                        <li><NavLink class="dropdown-item" href="downloads">Download</NavLink></li>
-                        <li><NavLink class="dropdown-item" href="history">History</NavLink></li>
-                        <li><NavLink class="dropdown-item" href="vision-and-mission">Vision & Mission</NavLink></li>
-                        <li><NavLink class="dropdown-item" href="staff">Staff</NavLink></li>
-                        <li><NavLink class="dropdown-item" href="facilities">Facilities</NavLink></li>
-                        <li><NavLink class="dropdown-item" href="annual-report">Annual Report</NavLink></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown" @onclick=@()>
-                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="oi oi-plus" aria-hidden="true"></span> Programs
-                    </NavLink>
-                    <ul class="dropdown-content">
-                        <li><NavLink class="dropdown-item" href="digital-media">Digital Media</NavLink></li>
-                        <li @ref=navDropDown3 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown3,@navDropDown2))>
-                            <NavLink class="nav-link">Curriculum</NavLink>
-                            <ul class="dropdown-content">
-                                <li><NavLink class="dropdown-item" href="curriculum/curriculum-structure">- Curriculum Structure</NavLink></li>
-                                <li><NavLink class="dropdown-item" href="curriculum/study-plan">- Study Plan</NavLink></li>
-                                <li><NavLink class="dropdown-item" href="curriculum/course-description">- Course Description</NavLink></li>
-                                <li><NavLink class="dropdown-item" href="curriculum/academic-announcement-and-regulations">- Academic Announcement and Regulations</NavLink></li>
-                            </ul>
-                        </li>
-                        <li @ref=navDropDown4 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown4,@navDropDown2))>
-                            <NavLink class="nav-link">Cooperative Education</NavLink>
-                            <ul class="dropdown-content">
-                                <li><NavLink class="dropdown-item" href="cooperative/overview">- Overview</NavLink></li>
-                                <li><NavLink class="dropdown-item" href="cooperative/application-process">- Application Process</NavLink></li>
-                                <li><NavLink class="dropdown-item" href="cooperative/during-training">- During Training</NavLink></li>
-                                <li><NavLink class="dropdown-item" href="cooperative/criteria-of-evaluation-and-scholarship-announcement">- Criteria of Evaluation and Scholarship Announcement</NavLink></li>
-                            </ul>
-                        </li>
-                        <li><NavLink class="dropdown-item" href="student-showcase">Student Showcase</NavLink></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown" @onclick=@()>
-                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="oi oi-plus" aria-hidden="true"></span> Admission
-                    </NavLink>
-                    <ul class="dropdown-content">
-                        <li><NavLink class="dropdown-item" href="thai-education-system">Thai Education System</NavLink></li>
-                        <li><NavLink class="dropdown-item" href="international-certificate">International Certificate</NavLink></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="general-education">
-                        <span class="oi oi-plus" aria-hidden="true"></span> General Education
-                    </NavLink>
-                </li>
-                <li class="nav-item dropdown" @onclick=@()>
-                    <NavLink class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="oi oi-plus" aria-hidden="true"></span> International Affairs
-                    </NavLink>
-                    <ul class="dropdown-content">
-                        <li><NavLink class="dropdown-item" href="international-affairs/mou-collaborations">MOU & Collaborations</NavLink></li>
-                        <li><NavLink class="dropdown-item" href="international-affairs/student-mobility-program">Student Mobility Program</NavLink></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="academic-service">
-                        <span class="oi oi-plus" aria-hidden="true"></span> Academic Service
-                    </NavLink>
-                </li>
-                <li>
-                    <ul class="nav-languages">
-                        <li class="">
-                            <a class="" aria-current="page" href="#">EN</a>
-                        </li>
-                        <li class="">
-                            <p class=""> | </p>
-                        </li>
-                        <li class="">
-                            <a class="" aria-current="page" href="#">TH</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+
         </div>*@
 
         <div class="navbar-mobile @NavMenuCssClass">
@@ -115,70 +28,102 @@
                         <span class="oi oi-plus" aria-hidden="true"></span> About Us
                     </NavLink>
                     <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
-                        <li><NavLink class="dropdown-item" href="downloads">Download</NavLink></li>
                         <li><NavLink class="dropdown-item" href="history">History</NavLink></li>
                         <li><NavLink class="dropdown-item" href="vision-and-mission">Vision & Mission</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="executives">Executives</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="faculty-members">Faculty Members</NavLink></li>
                         <li><NavLink class="dropdown-item" href="staff">Staff</NavLink></li>
-                        <li><NavLink class="dropdown-item" href="facilities">Facilities</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="cooperate-identity">Cooperate Identity</NavLink></li>
                         <li><NavLink class="dropdown-item" href="annual-report">Annual Report</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="contact-us">Contact Us</NavLink></li>
                     </ul>
                 </li>
                 <li @ref=navDropDown2 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown2))>
                     <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                        <span class="oi oi-plus" aria-hidden="true"></span> News
+                    </NavLink>
+                    <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
+                        <li><NavLink class="dropdown-item" href="announcements">Announcements</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="job-vacancies">Job Vacancies</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="press-and-media">Press and Media</NavLink></li>
+                    </ul>
+                </li>
+                <li @ref=navDropDown3 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown3))>
+                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
                         <span class="oi oi-plus" aria-hidden="true"></span> Programs
                     </NavLink>
+                    <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
+                        <li><NavLink class="dropdown-item" href="cmdt">CMDT</NavLink></li>
+                        <li><NavLink class="dropdown-item" href="ge">GE</NavLink></li>
+                    </ul>
+                </li>
+                <li @ref=navDropDown4 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown4))>
+                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                        <span class="oi oi-plus" aria-hidden="true"></span> Student
+                    </NavLink>
                     <ul class="dropdown-content">
-                        <li><NavLink class="dropdown-item" href="digital-media">Digital Media</NavLink></li>
                         @*This divider is hidden until a method to change color is found*@
                         @*<li><hr class="dropdown-divider"></li>*@
-                        <li @ref=navDropDown3 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown3,@navDropDown2))>
+                        <li @ref=navDropDown5 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown5,@navDropDown4))>
+                            <NavLink class="nav-link">Student Activities</NavLink>
+                            <ul class="dropdown-content">
+                                <li><NavLink class="dropdown-item" href="student-association">- Student Association</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="club-and-acitivity-transcript">- Club and Acitivity Transcript</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="student-discipline-rules-and-regulations">- Student Discipline Rules and Regulations</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="disciplinary-procedures">- Disciplinary Procedures</NavLink></li>
+                            </ul>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li @ref=navDropDown6 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown6,@navDropDown4))>
+                            <NavLink class="nav-link">Student Services</NavLink>
+                            <ul class="dropdown-content">
+                                <li><NavLink class="dropdown-item" href="health-service">- Health Service</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="counseling-service">- Counseling Service</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="housing">- Housing</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="academic-calendar">- Academic Calendar</NavLink></li>
+                            </ul>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li @ref=navDropDown7 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown7,@navDropDown4))>
+                            <NavLink class="nav-link">Academic Service</NavLink>
+                            <ul class="dropdown-content">
+                                <li><NavLink class="dropdown-item" href="exchange-programs">- Exchange Programs</NavLink></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li @ref=navDropDown8 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown8))>
+                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                        <span class="oi oi-plus" aria-hidden="true"></span> PSU Online Systems
+                    </NavLink>
+                    <ul class="dropdown-content">
+                        @*This divider is hidden until a method to change color is found*@
+                        <li @ref=navDropDown9 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown9,@navDropDown8))>
                             <NavLink class="nav-link">Curriculum</NavLink>
                             <ul class="dropdown-content">
-                                <li><NavLink class="dropdown-item" href="curriculum/curriculum-structure">- Curriculum Structure</NavLink></li>
-                                <li><NavLink class="dropdown-item" href="curriculum/study-plan">- Study Plan</NavLink></li>
-                                <li><NavLink class="dropdown-item" href="curriculum/course-description">- Course Description</NavLink></li>
-                                <li><NavLink class="dropdown-item" href="curriculum/academic-announcement-and-regulations">- Academic Announcement and Regulations</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="mis-dss">- MIS-DSS</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="hrmis">- HRMIS</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="course-spec">- Course Spec</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="coure-report">- Coure Report</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="psu-tpsf">- PSU-TPSF</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="grade-submission-system">- Grade Submission System</NavLink></li>
                             </ul>
                         </li>
-                        <li @ref=navDropDown4 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown4,@navDropDown2))>
+                        <li><hr class="dropdown-divider"></li>
+                        <li @ref=navDropDown10 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown10,@navDropDown8))>
                             <NavLink class="nav-link">Cooperative Education</NavLink>
                             <ul class="dropdown-content">
-                                <li><NavLink class="dropdown-item" href="cooperative/overview">- Overview</NavLink></li>
-                                <li><NavLink class="dropdown-item" href="cooperative/application-process">- Application Process</NavLink></li>
-                                <li><NavLink class="dropdown-item" href="cooperative/during-training">- During Training</NavLink></li>
-                                <li><NavLink class="dropdown-item" href="cooperative/criteria-of-evaluation-and-scholarship-announcement">- Criteria of Evaluation and Scholarship Announcement</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="dormitory reservation">- Dormitory Reservation</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="registration office">- Registration Office</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="sis">- SIS</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="lms">- LMS</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="psu-student-loan">- PSU Student Loan</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="psu-activity-transcript">- PSU Activity Transcript</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="facility-booking">- Facility Booking</NavLink></li>
+                                <li><NavLink class="dropdown-item" href="psu-tes">- PSU-TES</NavLink></li>
                             </ul>
                         </li>
-                        <li><NavLink class="dropdown-item" href="student-showcase">Student Showcase</NavLink></li>
                     </ul>
-                </li>
-                <li @ref=navDropDown5 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown5))>
-                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="oi oi-plus" aria-hidden="true"></span> Admission
-                    </NavLink>
-                    <ul class="dropdown-content">
-                        <li><NavLink class="dropdown-item" href="thai-education-system">Thai Education System</NavLink></li>
-                        <li><NavLink class="dropdown-item" href="international-certificate">International Certificate</NavLink></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="general-education">
-                        <span class="oi oi-plus" aria-hidden="true"></span> General Education
-                    </NavLink>
-                </li>
-                <li @ref=navDropDown6 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown6))>
-                    <NavLink class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="oi oi-plus" aria-hidden="true"></span> International Affairs
-                    </NavLink>
-                    <ul class="dropdown-content">
-                        <li><NavLink class="dropdown-item" href="international-affairs/mou-collaborations">MOU & Collaborations</NavLink></li>
-                        <li><NavLink class="dropdown-item" href="international-affairs/student-mobility-program">Student Mobility Program</NavLink></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="academic-service">
-                        <span class="oi oi-plus" aria-hidden="true"></span> Academic Service
-                    </NavLink>
                 </li>
                 <li>
                     <ul class="nav-languages">
@@ -207,6 +152,10 @@
     private ElementReference navDropDown4;
     private ElementReference navDropDown5;
     private ElementReference navDropDown6;
+    private ElementReference navDropDown7;
+    private ElementReference navDropDown8;
+    private ElementReference navDropDown9;
+    private ElementReference navDropDown10;
 
     private bool collapseNavMenu = true;
 
