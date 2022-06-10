@@ -16,8 +16,8 @@
 
             </div>*@
 
-        <div class="navbar-mobile @NavMenuCssClass">
-            <ul class="navbar-nav">
+        <div @ref=navMobile class="navbar-mobile">
+            <ul class="navbar-nav @NavMenuCssClass">
                 <a href="javascript:void(0)" class="closebtn" @onclick="ToggleNavMenu">&times;</a>
                 <li class="nav-item">
                     <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
@@ -152,7 +152,7 @@
     </div>
 </nav>
 @code {
-
+    private ElementReference navMobile;
     [Parameter] public EventCallback OnCancel { get; set; }
     private ElementReference navDropDown1;
     private ElementReference navDropDown2;
@@ -167,21 +167,30 @@
 
     private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "navbar-collapse" : null;
+    //private string? NavMenuCssClass => collapseNavMenu ? "navbar-collapse" : null;
+    private string? NavMenuCssClass => collapseNavMenu ? "openNav" : "closeNav";
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
     }
 
-    // desktop version
 
+
+    // desktop version
     private void ToggleDropDownDesktop()
     {
 
     }
 
+
     // mobile version
+    
+    private async void CloseNavMenuMobile()
+    {
+        await JSRuntime.InvokeVoidAsync("swipeUp", navMobile);
+    }
+
     private async void ToggleNavDropDown(ElementReference element)
     {
         await JSRuntime.InvokeVoidAsync("toggleNavDropDown", element);

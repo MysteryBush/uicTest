@@ -195,6 +195,36 @@ a, .btn-link {
 
 /* #endregion */
 /* #region Navbar */
+@keyframes swipe-down {
+  0% {
+    height: 0%;
+    opacity: 0;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+@keyframes swipe-up {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+    opacity: 0;
+  }
+}
+.openNav {
+  animation-name: swipe-down;
+  animation-duration: 1s;
+}
+
+.closeNav {
+  animation-name: swipe-up;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
 nav {
   background-color: #3A5E80;
   /*z-index: 5;*/
@@ -227,17 +257,22 @@ nav > .container-fluid {
   flex-direction: column;
   gap: 10px;
   align-items: start;
-  background-color: #69859F;
+  background-color: #3A5E80;
   z-index: 5;
   position: absolute;
   top: 0px;
   left: 0px;
-  padding: 20px;
+  padding: 60px;
   padding-top: 50px;
+  padding-bottom: 20px;
   width: 100%;
   height: 100vh;
   position: fixed;
   overflow-x: hidden;
+  /*overflow-y: hidden;*/
+}
+.navbar-expand .navbar-nav::-webkit-scrollbar {
+  display: none;
 }
 .navbar-expand .nav-link {
   padding: 0px !important;
@@ -263,7 +298,7 @@ nav > .container-fluid {
   display: none;
 }
 
-nav-items-bar {
+.nav-items-bar {
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -332,6 +367,9 @@ nav-items-bar {
   right: 45px;
   font-size: 60px;
   text-decoration: none;
+  color: #FFFFFF;
+}
+.closebtn:hover {
   color: #FFFFFF;
 }
 

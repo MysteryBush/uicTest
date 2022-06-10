@@ -24,6 +24,10 @@ function hideNavDropDown(dropdown)
     element.classList.remove("dropdown-show");
 }
 
+function swipeUp(div) {
+    var element = div;
+}
+
 
 /* On page loaded, scroll to top */
 // https://stackoverflow.com/a/26837814
