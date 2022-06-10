@@ -14,10 +14,11 @@
         </button>
         @*<div class="navbar-desktop">
 
-        </div>*@
+            </div>*@
 
         <div class="navbar-mobile @NavMenuCssClass">
             <ul class="navbar-nav">
+                <a href="javascript:void(0)" class="closebtn" @onclick="ToggleNavMenu">&times;</a>
                 <li class="nav-item">
                     <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                         <span class="oi oi-home" aria-hidden="true"></span> Home
@@ -125,6 +126,14 @@
                         </li>
                     </ul>
                 </li>
+                @*Search Bar*@
+                <li>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </li>
+                @*Languages Buttons*@
                 <li>
                     <ul class="nav-languages">
                         <li class="">
@@ -140,7 +149,6 @@
                 </li>
             </ul>
         </div>
-        <div class="navbar-mobile"></div>
     </div>
 </nav>
 @code {
