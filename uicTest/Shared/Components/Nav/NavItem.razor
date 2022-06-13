@@ -1,0 +1,43 @@
+﻿<NavLink class="@navClass" href="@address" >@ItemName</NavLink>
+
+@* <NavLink class="nav-link" href="" Match="NavLinkMatch.All">Home</NavLink> *@
+@* <li></li> *@
+@*
+<li><NavLink class="dropdown-item" href="contact-us">Contact Us</NavLink></li>
+<li><NavLink class="dropdown-item" href="grade-submission-system">- Grade Submission System</NavLink></li>
+*@
+
+@code {
+    private string navClass = "";
+    private string address = "";
+    private string showName = "";
+    [Parameter]
+    public bool @DropDown { get; set; } = false;
+    [Parameter]
+    public bool @isDropdownItem { get; set; } = false;
+    [Parameter]
+    public bool @subItem { get; set; } = false;
+    [Parameter]
+    public string? @ItemName { get; set; }
+
+    private void setNav()
+    {
+        if (@DropDown == false)
+        {
+            address = @ItemName.Replace(" ", "-");
+            if (@isDropdownItem == true) navClass = "dropdown-item";
+            else navClass = "nav-link";
+        }
+        //else if (@DropDown == true) navClass = "nav-link dropdown-toggle";
+        else navClass = "nav-link dropdown-toggle";
+
+        if (@subItem == true)
+            showName = "- " + @ItemName;
+    }
+
+    protected override void OnParametersSet()
+    {
+        setNav();
+        base.OnParametersSet();
+    }
+}

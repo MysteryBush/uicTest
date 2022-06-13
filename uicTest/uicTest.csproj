@@ -17,4 +17,11 @@
     <None Include="wwwroot\css\open-iconic\README.md" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\PSU-Online-Systems\" />
+    <Folder Include="Pages\Student\" />
+    <Folder Include="Pages\Programs\" />
+    <Folder Include="Pages\News\" />
+  </ItemGroup>
+
 </Project>
