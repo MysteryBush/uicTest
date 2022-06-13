@@ -165,13 +165,16 @@
     private ElementReference navDropDown9;
     private ElementReference navDropDown10;
 
-    private bool collapseNavMenu = true;
+    private bool collapseNavMenu = false;
+    private bool firstClick = false;
 
     //private string? NavMenuCssClass => collapseNavMenu ? "navbar-collapse" : null;
-    private string? NavMenuCssClass => collapseNavMenu ? "openNav" : "closeNav";
+    //private string? NavMenuCssClass => collapseNavMenu ? "openNav" : "closeNav";
+    private string? NavMenuCssClass => firstClick ? (collapseNavMenu ? "openNav" : "closeNav") : "navbar-collapse";
 
     private void ToggleNavMenu()
     {
+        if (firstClick == false) firstClick = true;
         collapseNavMenu = !collapseNavMenu;
     }
 
