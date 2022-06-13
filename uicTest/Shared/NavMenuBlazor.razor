@@ -20,14 +20,10 @@
             <ul class="navbar-nav @NavMenuCssClass">
                 <a href="javascript:void(0)" class="closebtn" @onclick="ToggleNavMenu">&times;</a>
                 <li class="nav-item">
-                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                        <span class="oi oi-home" aria-hidden="true"></span> Home
-                    </NavLink>
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">Home</NavLink>
                 </li>
                 <li @ref=navDropDown1 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown1))>
-                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="oi oi-plus" aria-hidden="true"></span> About Us
-                    </NavLink>
+                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">About Us</NavLink>
                     <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                         <li><NavLink class="dropdown-item" href="history">History</NavLink></li>
                         <li><NavLink class="dropdown-item" href="vision-and-mission">Vision & Mission</NavLink></li>
@@ -40,9 +36,7 @@
                     </ul>
                 </li>
                 <li @ref=navDropDown2 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown2))>
-                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="oi oi-plus" aria-hidden="true"></span> News
-                    </NavLink>
+                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">News</NavLink>
                     <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                         <li><NavLink class="dropdown-item" href="announcements">Announcements</NavLink></li>
                         <li><NavLink class="dropdown-item" href="job-vacancies">Job Vacancies</NavLink></li>
@@ -59,9 +53,7 @@
                     </ul>
                 </li>
                 <li @ref=navDropDown4 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown4))>
-                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="oi oi-plus" aria-hidden="true"></span> Student
-                    </NavLink>
+                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false"><span class="oi oi-plus" aria-hidden="true"></span>Student</NavLink>
                     <ul class="dropdown-content">
                         @*This divider is hidden until a method to change color is found*@
                         @*<li><hr class="dropdown-divider"></li>*@
@@ -94,9 +86,7 @@
                     </ul>
                 </li>
                 <li @ref=navDropDown8 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown8))>
-                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="oi oi-plus" aria-hidden="true"></span> PSU Online Systems
-                    </NavLink>
+                    <NavLink class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">PSU Online Systems</NavLink>
                     <ul class="dropdown-content">
                         @*This divider is hidden until a method to change color is found*@
                         <li @ref=navDropDown9 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown9,@navDropDown8))>

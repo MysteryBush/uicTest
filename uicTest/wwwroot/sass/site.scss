@@ -421,15 +421,6 @@ nav {
 .ul, li {
     list-style-type: none;
 }
-/* This .oi is from Blazor's default. Will it ever be needed? */
-.oi {
-    width: 2rem;
-    font-size: 1.1rem;
-    vertical-align: text-top;
-    top: -2px;
-    /* This line is added to hide icons for now. Might consider to use it later */
-    display: none;
-}
 
 .nav-item {
     width: 100%;
