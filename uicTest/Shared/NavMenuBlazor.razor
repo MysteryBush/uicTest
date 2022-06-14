@@ -14,8 +14,7 @@
         </button>
         @*<div class="navbar-desktop">
 
-            </div>*@
-
+        </div>*@
         <div @ref=navMobile class="navbar-mobile">
             <ul class="navbar-nav @NavMenuCssClass">
                 <a href="javascript:void(0)" class="closebtn" @onclick="ToggleNavMenu">&times;</a>
@@ -166,17 +165,14 @@
         collapseNavMenu = !collapseNavMenu;
     }
 
-
-
     // desktop version
     private void ToggleDropDownDesktop()
     {
 
     }
 
-
     // mobile version
-    
+
     private async void CloseNavMenuMobile()
     {
         await JSRuntime.InvokeVoidAsync("swipeUp", navMobile);

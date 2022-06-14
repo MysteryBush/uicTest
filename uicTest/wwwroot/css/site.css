@@ -241,6 +241,34 @@ a, .btn-link {
   z-index: 8;
 }
 
+.navbar-show {
+  animation-name: navbar-show;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.navbar-hide {
+  animation-name: navbar-hide;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes navbar-hide {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -50px;
+  }
+}
+@keyframes navbar-show {
+  0% {
+    top: -50px;
+  }
+  100% {
+    top: 0px;
+  }
+}
 nav {
   background-color: #3A5E80;
 }
@@ -471,6 +499,9 @@ nav > .container-fluid {
     display: block;
   }
 
+  .nav-items-bar {
+    height: 100px;
+  }
   .nav-items-bar .navbar {
     height: 100px;
   }
