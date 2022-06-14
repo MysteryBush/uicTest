@@ -1,7 +1,7 @@
 ﻿@using Microsoft.JSInterop
 @inject IJSRuntime JSRuntime
 @using uicTest.Shared.Components.Nav
-<nav class="navbar navbar-expand prevent-select box-shadow position-absolute w-100">
+<nav id="navbar" class="navbar navbar-expand prevent-select box-shadow w-100">
     <HiddenTop />
     <div class="container-fluid nav-items-bar">
         <a class="navbar-brand align-self-baseline" href="">
@@ -51,7 +51,7 @@
                     </ul>
                 </li>
                 <li @ref=navDropDown4 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown4))>
-                    <NavLink class="nav-link dropdown-toggle"><span class="oi oi-plus" aria-hidden="true"></span>Student</NavLink>
+                    <NavLink class="nav-link dropdown-toggle">Student</NavLink>
                     <ul class="dropdown-content">
                         @*This divider is hidden until a method to change color is found*@
                         @*<li><hr class="dropdown-divider"></li>*@

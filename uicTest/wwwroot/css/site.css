@@ -97,9 +97,12 @@ article {
 }
 
 h1, h2, h3, h4, h5 {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
 }
 
 h1:focus {
@@ -119,9 +122,12 @@ a, .btn-link {
 /* #endregion */
 /* #region Global Classes For Global Use */
 .prevent-select {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
 }
 
 .div-link {
@@ -130,7 +136,7 @@ a, .btn-link {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 4;
 }
 
 /* This is going to be used for titles in header-home */
@@ -155,7 +161,7 @@ a, .btn-link {
 }
 
 .color-overlay {
-  background: rgb(85, 85, 85);
+  background: #555555;
   overflow: hidden;
   height: 100%;
   z-index: 2;
@@ -225,9 +231,18 @@ a, .btn-link {
   animation-fill-mode: forwards;
 }
 
+#navbar {
+  position: fixed;
+  /* Make it stick/fixed */
+  top: 0;
+  /* Stay on top */
+  transition: top 0.3s;
+  /* Transition effect when sliding down (and up) */
+  z-index: 8;
+}
+
 nav {
   background-color: #3A5E80;
-  /*z-index: 5;*/
 }
 nav > .container-fluid {
   padding: 0px;
@@ -242,8 +257,7 @@ nav > .container-fluid {
   /*position: absolute;
   display: block;
   height: 100vh;
-  width: 100vw;
-  z-index: 1;*/
+  width: 100vw; */
 }
 
 .navbar-expand {
@@ -258,7 +272,6 @@ nav > .container-fluid {
   gap: 10px;
   align-items: start;
   background-color: #3A5E80;
-  z-index: 5;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -377,16 +390,6 @@ nav > .container-fluid {
   list-style-type: none;
 }
 
-/* This .oi is from Blazor's default. Will it ever be needed? */
-.oi {
-  width: 2rem;
-  font-size: 1.1rem;
-  vertical-align: text-top;
-  top: -2px;
-  /* This line is added to hide icons for now. Might consider to use it later */
-  display: none;
-}
-
 .nav-item {
   width: 100%;
   /* START of Blazor's default */
@@ -451,7 +454,6 @@ nav > .container-fluid {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
-  z-index: 5;
 }
 .dropdown-show > .dropdown-content {
   display: block;
@@ -468,15 +470,19 @@ nav > .container-fluid {
   .navbar-desktop {
     display: block;
   }
+
   .nav-items-bar .navbar {
     height: 100px;
   }
+
   .navbar-brand img {
     height: 100px;
   }
+
   .nav-item {
     width: auto;
   }
+
   .navbar-expand {
     /* hide mobile version navbar */
   }
@@ -502,10 +508,12 @@ nav > .container-fluid {
   .navbar-expand .navbar-mobile {
     display: none !important;
   }
+
   .navbar .nav-languages {
     margin-right: 30px;
     margin-left: 20px;
   }
+
   /*navbar have relative dropdown*/
   .dropdown-content {
     position: absolute;
@@ -592,11 +600,13 @@ footer a {
   .container-popup {
     max-width: 600px;
   }
+
   .text1 {
     font-size: 20px;
     line-height: 41px;
     font-weight: 400;
   }
+
   .text2 {
     font-size: 16px;
     line-height: 20px;
@@ -607,11 +617,13 @@ footer a {
   .container-popup {
     max-width: 1009px;
   }
+
   .text1 {
     font-size: 40px;
     line-height: 68px;
     font-weight: 400;
   }
+
   .text2 {
     font-size: 24px;
     line-height: 41px;
@@ -711,12 +723,12 @@ footer a {
   /* Using math for calculating responsive ness*/
   /*width: 1101px;*/
   height: 150px;
-  background-color: rgb(0, 60, 113);
+  background-color: #003c71;
 }
 .header-home__label {
   width: 100%;
   height: 50px;
-  background-color: rgb(58, 94, 128);
+  background-color: #3a5e80;
   box-shadow: 0px -5px 13px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   overflow: hidden;
@@ -733,7 +745,6 @@ footer a {
   z-index: 2;
 }
 .header-home__title-box {
-  /*z-index: 3;*/
   background-color: none;
 }
 .header-home__box {
@@ -741,11 +752,8 @@ footer a {
   /*width: 1101px;*/
   /*margin-left: 1542% / 1920% * 100%;*/
   padding: 4px;
-  background: rgb(58, 94, 128);
+  background: #3a5e80;
   border-radius: 30px;
-}
-.header-home__box-container {
-  /*z-index: 3;*/
 }
 .header-home__box__image {
   position: relative;
@@ -906,9 +914,12 @@ footer a {
 /* #endregion */
 /* .hide-scroll */
 .hide-scroll {
-  overflow-y: scroll; /* Add the ability to scroll */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  overflow-y: scroll;
+  /* Add the ability to scroll */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
   /* Hide scrollbar for Chrome, Safari and Opera */
 }
 .hide-scroll::-webkit-scrollbar {
