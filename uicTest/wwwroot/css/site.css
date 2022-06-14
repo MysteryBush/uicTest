@@ -59,7 +59,7 @@ a, .btn-link {
 }
 
 .card img {
-  max-height: 150px;
+  max-height: 700px;
   object-fit: cover;
 }
 .card .img-fluid {
@@ -178,6 +178,12 @@ a, .btn-link {
     height: 400px;
   }
 }
+/* border-radius */
+.container-rounded {
+  border-radius: 60px;
+  overflow: hidden;
+}
+
 /* #endregion */
 /* #region layout classes */
 .content-container {

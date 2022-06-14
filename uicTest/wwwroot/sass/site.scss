@@ -199,6 +199,29 @@ a, .btn-link {
     }
 }
 
+/* border-radius */
+$border-radius-card: 60px;
+
+.container-rounded {
+    border-radius: $border-radius-card;
+    overflow: hidden;
+}
+
+//.rounded {
+//    &-left {
+//        border-radius: 60px 0px 0px 60px;
+//    }
+//    &-right {
+//        border-radius: 0px 60px 60px 0px;
+//    }
+//    &-top {
+//        border-radius: 60px 60px 0px 0px;
+//    }
+//    &-bottom {
+//        border-radius: 0px 0px 60px 60px;
+//    }
+//}
+
 /* #endregion */
 
 /* #region layout classes */

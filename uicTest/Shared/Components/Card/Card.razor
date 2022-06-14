@@ -1,20 +1,22 @@
 ﻿@using Microsoft.JSInterop
 @inject IJSRuntime JSRuntime
 
-<div class="card shadow mb-3">
-    <div class="row g-0 @flex">
-        <div class="@cardClass">
-            <img src="@Img" class="img-fluid rounded-start" alt="Card Image">
-        </div>
-        <div class="@cardClass">
-            <div class="card-body position-relative">
-                <h4 class="card-title">@Title</h4>
-                <p class="card-text">@ChildContent</p>
-                <a href="#" class="card-link text-end">Read more...</a>
-                @* empty card-text just to give more content space at its bottom *@
-                <p class="card-text"></p>
-                <div class="position-absolute bottom-0 end-0">
-                    <p class="mx-3">@Date</p>
+<div class="container-rounded shadow mb-3">
+    <div class="card">
+        <div class="row g-0 @flex">
+            <div class="@cardClass">
+                <img src="@Img" class="img-fluid @roundedClass" alt="Card Image">
+            </div>
+            <div class="@cardClass">
+                <div class="card-body position-relative">
+                    <h4 class="card-title">@Title</h4>
+                    <p class="card-text">@ChildContent</p>
+                    <a href="#" class="card-link text-end">Read more...</a>
+                    @* empty card-text just to give more content space at its bottom *@
+                    <p class="card-text"></p>
+                    <div class="position-absolute bottom-0 end-0">
+                        <p class="mx-3">@Date</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -24,6 +26,7 @@
 @code {
     private string flex = "";
     private string cardClass = "";
+    private string roundedClass = "";
     [Parameter]
     public string @Title { get; set; } = "Title";
     [Parameter]
@@ -87,7 +90,7 @@
     call a function at Page Load (event name)
     https://stackoverflow.com/a/61554592
     protected override async Task OnInitializedAsync()
-    {
+        {
         SwitchMode();
         FlipMode();
         await Task.Delay(1);
