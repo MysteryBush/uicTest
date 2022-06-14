@@ -623,7 +623,14 @@ nav {
     }
     /*navbar have relative dropdown*/
     .dropdown-content {
-        position: absolute;
+        position: fixed;
+    }
+
+    .dropdown-show {
+        > .dropdown-content {
+            z-index: 9;
+            //position: relative;
+        }
     }
 }
 /*#endregion*/

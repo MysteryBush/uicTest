@@ -17,9 +17,9 @@
                 <li class="nav-item">
                     <NavLink class="nav-link" href="" Match="NavLinkMatch.All">Home</NavLink>
                 </li>
-                <li @ref=navDropDown1 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown1))>
+                <li @ref=navDesktopDropDown1 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDesktopDropDown1))>
                     <NavLink class="nav-link dropdown-toggle">About Us</NavLink>
-                    <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
+                    <ul class="dropdown-content" aria-labelledby="">
                         <li><NavItem isDropdownItem=true ItemName="History"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="Vision & Mission"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="Executives"></NavItem></li>
@@ -30,7 +30,7 @@
                         <li><NavItem isDropdownItem=true ItemName="Contact Us"></NavItem></li>
                     </ul>
                 </li>
-                <li @ref=navDropDown2 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown2))>
+                <li @ref=navDesktopDropDown2 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDesktopDropDown2))>
                     <NavLink class="nav-link dropdown-toggle">News</NavLink>
                     <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                         <li><NavItem isDropdownItem=true ItemName="Announcements"></NavItem></li>
@@ -38,19 +38,19 @@
                         <li><NavItem isDropdownItem=true ItemName="Press and Media"></NavItem></li>
                     </ul>
                 </li>
-                <li @ref=navDropDown3 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown3))>
+                <li @ref=navDesktopDropDown3 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDesktopDropDown3))>
                     <NavLink class="nav-link dropdown-toggle">Programs</NavLink>
                     <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                         <li><NavItem isDropdownItem=true ItemName="CMDT"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="GE"></NavItem></li>
                     </ul>
                 </li>
-                <li @ref=navDropDown4 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown4))>
+                <li @ref=navDesktopDropDown4 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDesktopDropDown4))>
                     <NavLink class="nav-link dropdown-toggle">Student</NavLink>
                     <ul class="dropdown-content">
                         @*This divider is hidden until a method to change color is found*@
                         @*<li><hr class="dropdown-divider"></li>*@
-                        <li @ref=navDropDown5 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown5,@navDropDown4))>
+                        <li @ref=navDesktopDropDown5 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDesktopDropDown5,@navDesktopDropDown4))>
                             <NavLink class="nav-link dropdown-toggle">Student Activities</NavLink>
                             <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Student Association"></NavItem></li>
@@ -60,7 +60,7 @@
                             </ul>
                         </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li @ref=navDropDown6 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown6,@navDropDown4))>
+                        <li @ref=navDesktopDropDown6 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDesktopDropDown6,@navDesktopDropDown4))>
                             <NavLink class="nav-link dropdown-toggle">Student Services</NavLink>
                             <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Health Service"></NavItem></li>
@@ -70,7 +70,7 @@
                             </ul>
                         </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li @ref=navDropDown7 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown7,@navDropDown4))>
+                        <li @ref=navDesktopDropDown7 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDesktopDropDown7,@navDesktopDropDown4))>
                             <NavLink class="nav-link dropdown-toggle">Academic Service</NavLink>
                             <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Exchange Programs"></NavItem></li>
@@ -78,11 +78,11 @@
                         </li>
                     </ul>
                 </li>
-                <li @ref=navDropDown8 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown8))>
+                <li @ref=navDesktopDropDown8 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDesktopDropDown8))>
                     <NavLink class="nav-link dropdown-toggle">PSU Online Systems</NavLink>
                     <ul class="dropdown-content">
                         @*This divider is hidden until a method to change color is found*@
-                        <li @ref=navDropDown9 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown9,@navDropDown8))>
+                        <li @ref=navDesktopDropDown9 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDesktopDropDown9,@navDesktopDropDown8))>
                             <NavLink class="nav-link dropdown-toggle">Curriculum</NavLink>
                             <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="MIS-DSS"></NavItem></li>
@@ -94,7 +94,7 @@
                             </ul>
                         </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li @ref=navDropDown10 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown10,@navDropDown8))>
+                        <li @ref=navDesktopDropDown10 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDesktopDropDown10,@navDesktopDropDown8))>
                             <NavLink class="nav-link dropdown-toggle">Cooperative Education</NavLink>
                             <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Dormitory Reservation"></NavItem></li>
@@ -269,7 +269,16 @@
     private ElementReference navDropDown9;
     private ElementReference navDropDown10;
 
-    private ElementReference navDropDown11;
+    private ElementReference navDesktopDropDown1;
+    private ElementReference navDesktopDropDown2;
+    private ElementReference navDesktopDropDown3;
+    private ElementReference navDesktopDropDown4;
+    private ElementReference navDesktopDropDown5;
+    private ElementReference navDesktopDropDown6;
+    private ElementReference navDesktopDropDown7;
+    private ElementReference navDesktopDropDown8;
+    private ElementReference navDesktopDropDown9;
+    private ElementReference navDesktopDropDown10;
 
     private bool collapseNavMenu = false;
     private bool firstClick = false;
