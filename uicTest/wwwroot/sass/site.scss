@@ -54,7 +54,7 @@ $grid-breakpoints-xl: 1200px;
 $grid-breakpoints-xxl: 1400px;
 
 /* Media Resolution - Custom Media Resolution */
-$navbar-large-width: 1600px;
+$navbar-large-width: 1500px;
 $footer-large-width: 1100px;
 $footer-force-width: 737.78px;
 
@@ -541,10 +541,33 @@ nav {
     }
 }
 
-/*@include media($navbar-large-width) {*/
 @include media($navbar-large-width) {
     $navbar-height: 100px;
 
+    .navbar-show {
+        animation-name: navbar-show;
+        animation-fill-mode: forwards;
+    }
+
+    .navbar-hide {
+        animation-name: navbar-show;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes navbar-show {
+        0% {
+            top: 0px;
+        }
+
+        100% {
+            top: 0px;
+        }
+    }
+
+    .openNav, .closeNav, .navbar-collapse {
+        //display: block !important;
+        animation-fill-mode: none;
+    }
 
     .navbar-desktop {
         display: block;
@@ -552,6 +575,7 @@ nav {
 
     .nav-items-bar {
         height: $navbar-height;
+
         .navbar {
             height: $navbar-height;
         }
@@ -569,15 +593,11 @@ nav {
 
     .navbar-expand {
         .navbar-nav {
-            display: flex;
             flex-direction: row;
             position: relative;
-            top: unset;
             margin-right: 30px;
-            width: auto;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 40px;
+            height: 100%;
+            gap: 20px;
             padding: 0px;
         }
 
@@ -587,7 +607,7 @@ nav {
 
         .collapse, .navbar-collapse {
             /* Never collapse the sidebar for wide screens */
-            display: block !important;
+            display: flex !important;
         }
         /* hide mobile version navbar */
         .navbar-mobile {

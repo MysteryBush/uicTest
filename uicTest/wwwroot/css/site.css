@@ -493,8 +493,29 @@ nav > .container-fluid {
   background-color: #3A5E80;
 }
 
-/*@include media($navbar-large-width) {*/
-@media (min-width: 1600px) {
+@media (min-width: 1500px) {
+  .navbar-show {
+    animation-name: navbar-show;
+    animation-fill-mode: forwards;
+  }
+
+  .navbar-hide {
+    animation-name: navbar-show;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes navbar-show {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 0px;
+    }
+  }
+  .openNav, .closeNav, .navbar-collapse {
+    animation-fill-mode: none;
+  }
+
   .navbar-desktop {
     display: block;
   }
@@ -518,15 +539,11 @@ nav > .container-fluid {
     /* hide mobile version navbar */
   }
   .navbar-expand .navbar-nav {
-    display: flex;
     flex-direction: row;
     position: relative;
-    top: unset;
     margin-right: 30px;
-    width: auto;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 40px;
+    height: 100%;
+    gap: 20px;
     padding: 0px;
   }
   .navbar-expand .navbar-toggler {
@@ -534,7 +551,7 @@ nav > .container-fluid {
   }
   .navbar-expand .collapse, .navbar-expand .navbar-collapse {
     /* Never collapse the sidebar for wide screens */
-    display: block !important;
+    display: flex !important;
   }
   .navbar-expand .navbar-mobile {
     display: none !important;
