@@ -1,10 +1,11 @@
 ﻿@page "/"
 
-@using uicTest.Shared.Pages.Index
-@using uicTest.Shared.Layout
-@using uicTest.Shared.Components.Card
 @using Microsoft.JSInterop
 @inject IJSRuntime JSRuntime
+
+@using uicTest.Shared.Pages.Index
+@using uicTest.Shared.Layout
+@using uicTest.Shared.Components.Pagination
 
 <PageTitle>PSUIC Hatyai Campus</PageTitle>
 
@@ -17,45 +18,7 @@
     <HomeAdmission />*@
 
 <RowSection>
-    @*Title text*@
-    <div class="text-center mb-5">
-        <h1>PSUIC News</h1>
-    </div>
-
-    <div class="row">
-        <div class="col-md ">
-            <Card Mode="v-h" Flip=true Title="Breaking news #1"
-                  Img="https://cdn.pixabay.com/photo/2020/08/25/18/28/workplace-5517744_960_720.jpg">
-                here's some text
-            </Card>
-        </div>
-        <!-- Force next columns to break to new line (still break lines after ) -->
-        <div class="w-100"></div>
-
-        @*2nd-4th cards*@
-        <div class="col-md">
-            <Card Mode="" Title="Breaking news #2"
-            Img="https://th.bing.com/th/id/OIP.4MRQq4IfWbBxsF5sSh4U2QHaE8?pid=ImgDet&rs=1">
-                here's some text
-            </Card>
-        </div>
-        <div class="col-md">
-            <Card Mode="" Title="Breaking news #3"
-            Img="https://cdn.pixabay.com/photo/2020/08/25/18/28/workplace-5517744_960_720.jpg">
-                here's some text
-            </Card>
-        </div>
-        <div class="col-md">
-            <Card Mode="" Title="Breaking news #4"
-            Img="https://cdn.pixabay.com/photo/2020/08/25/18/28/workplace-5517744_960_720.jpg">
-                here's some text
-            </Card>
-        </div>
-    </div>
-    @*More News Button*@
-    <div class="text-center my-5">
-        <a href="#" >More</a>
-    </div>
+    <CardPages Title="PSUIC News"></CardPages>
 </RowSection>
 @code {
 

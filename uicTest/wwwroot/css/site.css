@@ -206,6 +206,19 @@ a, .btn-link {
 }
 
 /* #endregion */
+/* #region pagination */
+.button-page {
+  height: 28px;
+  border-radius: 50px;
+  background: #D9D9D9;
+  width: 28px;
+}
+.button-page.active {
+  background: #003C71;
+  width: 89px;
+}
+
+/* #endregion */
 /* #region Navbar */
 @keyframes swipe-down {
   0% {

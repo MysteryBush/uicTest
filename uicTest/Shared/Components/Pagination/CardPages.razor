@@ -1,0 +1,83 @@
+﻿@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+@using uicTest.Shared.Components.Card
+
+@*Title text*@
+<div class="text-center mb-5">
+    <h1>@Title</h1>
+</div>
+
+<div class="row">
+    <div class="col-md ">
+        <Card Mode="v-h" Flip=true Title="Breaking news #1"
+              Img="https://cdn.pixabay.com/photo/2020/08/25/18/28/workplace-5517744_960_720.jpg">
+            here's some text
+        </Card>
+    </div>
+    <!-- Force next columns to break to new line (still break lines after ) -->
+    <div class="w-100"></div>
+
+    @*2nd-4th cards*@
+    <div class="col-md">
+        <Card Mode="" Title="Breaking news #2"
+              Img="https://th.bing.com/th/id/OIP.4MRQq4IfWbBxsF5sSh4U2QHaE8?pid=ImgDet&rs=1">
+            here's some text
+        </Card>
+    </div>
+    <div class="col-md">
+        <Card Mode="" Title="Breaking news #3"
+              Img="https://cdn.pixabay.com/photo/2020/08/25/18/28/workplace-5517744_960_720.jpg">
+            here's some text
+        </Card>
+    </div>
+    <div class="col-md">
+        <Card Mode="" Title="Breaking news #4"
+              Img="https://cdn.pixabay.com/photo/2020/08/25/18/28/workplace-5517744_960_720.jpg">
+            here's some text
+        </Card>
+    </div>
+</div>
+@*Pages Buttons*@
+<div class="row justify-content-center gap-3">
+    <div @ref=button1 @onclick=@(()=> ToggleActiveButton(@button1)) class="button-page active"></div>
+    <div @ref=button2 @onclick=@(()=> ToggleActiveButton(@button2)) class="button-page"></div>
+    <div @ref=button3 @onclick=@(()=> ToggleActiveButton(@button3)) class="button-page"></div>
+    <div @ref=button4 @onclick=@(()=> ToggleActiveButton(@button4)) class="button-page"></div>
+</div>
+@*More News Button*@
+<div class="text-center my-5">
+    <a href="#">More</a>
+</div>
+
+@code {
+    private ElementReference button1;
+    private ElementReference button2;
+    private ElementReference button3;
+    private ElementReference button4;
+
+    [Parameter]
+    public string @Title { get; set; } = "Title";
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    private async void ToggleActiveButton(ElementReference element)
+    {
+        await JSRuntime.InvokeVoidAsync("toggleUnActiveButton", button1);
+        await JSRuntime.InvokeVoidAsync("toggleUnActiveButton", button2);
+        await JSRuntime.InvokeVoidAsync("toggleUnActiveButton", button3);
+        await JSRuntime.InvokeVoidAsync("toggleUnActiveButton", button4);
+        await JSRuntime.InvokeVoidAsync("toggleActiveButton", element);
+    }
+
+    private async void ToggleUnActiveButton(ElementReference element)
+    {
+        await JSRuntime.InvokeVoidAsync("toggleUnActiveButton", element);
+    }
+
+    //Blazor Pages, Routing, and Layouts [4 of 11] | Blazor for Beginners
+    //https://youtu.be/dMc-S8VkbIE?t=592
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+    }
+}

@@ -249,6 +249,20 @@ $border-radius-card: 60px;
 }
 /* #endregion */
 
+/* #region pagination */
+.button-page {
+    height: 28px;
+    border-radius: 50px;
+    background: #D9D9D9;
+    width: 28px;
+
+    &.active {
+        background: #003C71;
+        width: 89px;
+    }
+}
+/* #endregion */
+
 /* #region Navbar */
 $navbar-height: 50px;
 
