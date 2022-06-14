@@ -227,8 +227,7 @@ a, .btn-link {
 /* #endregion */
 
 /* #region Navbar */
-$navbar-height: 100px;
-$navbar-height-mobile: 50px;
+$navbar-height: 50px;
 
 @mixin nav-text {
     font-family: $font-family;
@@ -281,6 +280,38 @@ $navbar-height-mobile: 50px;
     z-index: 8;
 }
 
+.navbar-show {
+    animation-name: navbar-show;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.navbar-hide {
+    animation-name: navbar-hide;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes navbar-hide {
+    0% {
+        top: 0px;
+    }
+
+    100% {
+        top: -$navbar-height;
+    }
+}
+
+@keyframes navbar-show {
+    0% {
+        top: -$navbar-height;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+
 nav {
     background-color: $nav-color;
 
@@ -313,7 +344,7 @@ nav {
         top: 0px;
         left: 0px;
         padding: 60px;
-        padding-top: $navbar-height-mobile;
+        padding-top: $navbar-height;
         padding-bottom: 20px;
         width: 100%;
         height: 100vh;
@@ -360,7 +391,7 @@ nav {
 }
 
 .nav-items-bar {
-    height: $navbar-height-mobile;
+    height: $navbar-height;
     display: flex;
     flex-direction: row;
     /*align-items: center;*/
@@ -404,7 +435,7 @@ nav {
         @include no-padding-margin;
         margin-left: 35px;
         width: 100%;
-        height: $navbar-height-mobile;
+        height: $navbar-height;
         object-fit: cover;
     }
 }
@@ -512,12 +543,18 @@ nav {
 
 /*@include media($navbar-large-width) {*/
 @include media($navbar-large-width) {
+    $navbar-height: 100px;
+
+
     .navbar-desktop {
         display: block;
     }
 
-    .nav-items-bar .navbar {
+    .nav-items-bar {
         height: $navbar-height;
+        .navbar {
+            height: $navbar-height;
+        }
     }
 
     .navbar-brand {
