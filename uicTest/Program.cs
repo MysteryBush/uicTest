@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+//Testing adding Card data
+builder.Services.AddSingleton<CardItemService>();
 
 var app = builder.Build();
 

@@ -9,7 +9,7 @@ function toggleNavDropDown(dropdown) {
     element.classList.toggle("dropdown-show");
 }
 
-function toggleNavDropDownChild(child,parent) {
+function toggleNavDropDownChild(child, parent) {
     var element = child;
     var element2 = parent;
     //why is classList.add not recognized?
@@ -18,8 +18,7 @@ function toggleNavDropDownChild(child,parent) {
     element.classList.toggle("dropdown-show");
 }
 
-function hideNavDropDown(dropdown)
-{
+function hideNavDropDown(dropdown) {
     var element = dropdown;
     element.classList.remove("dropdown-show");
 }
@@ -28,15 +27,35 @@ function swipeUp(div) {
     var element = div;
 }
 
-function toggleActiveButton(button) {
-    var element = button
-    element.classList.add("active");
+//function toggleActiveButton(button) {
+//    var element = button
+//    element.classList.add("active");
+//}
+
+//function toggleUnActiveButton(button) {
+//    var element = button
+//    element.classList.remove("active");
+//}
+
+function toggleActivePage(page) {
+    document.getElementById(page).classList.add("active");
+    //evt.currentTarget.classList.add("active");
 }
 
-function toggleUnActiveButton(button) {
-    var element = button
-    element.classList.remove("active");
+function toggleUnActivePage(page) {
+    document.getElementById(page).classList.remove("active");
 }
+
+function toggleActiveButton(button, buttonClass) {
+    var element = document.getElementsByClassName(button);
+    var hide = document.getElementsByClassName(buttonClass);
+
+    for (i = 0; i < hide.length; i++) {
+        hide[i].classList.remove("active");
+    }
+    element[0].classList.add("active");
+}
+
 
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
 var prevScrollpos = window.pageYOffset;

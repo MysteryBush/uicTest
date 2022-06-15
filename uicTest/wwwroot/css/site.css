@@ -207,6 +207,13 @@ a, .btn-link {
 
 /* #endregion */
 /* #region pagination */
+.container-page {
+  display: none;
+}
+.container-page.active {
+  display: block;
+}
+
 .button-page {
   height: 28px;
   border-radius: 50px;

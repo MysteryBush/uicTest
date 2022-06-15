@@ -250,6 +250,13 @@ $border-radius-card: 60px;
 /* #endregion */
 
 /* #region pagination */
+.container-page {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+
 .button-page {
     height: 28px;
     border-radius: 50px;

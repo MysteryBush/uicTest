@@ -1,6 +1,9 @@
 ﻿@using Microsoft.JSInterop
 @inject IJSRuntime JSRuntime
 @using uicTest.Shared.Components.Card
+@using uicTest.Data
+@inject CardItemService CardService
+@implements IHandleEvent
 
 @*Title text*@
 <div class="text-center mb-5">
@@ -8,76 +11,100 @@
 </div>
 
 <div class="row">
-    <div class="col-md ">
-        <Card Mode="v-h" Flip=true Title="Breaking news #1"
-              Img="https://cdn.pixabay.com/photo/2020/08/25/18/28/workplace-5517744_960_720.jpg">
-            here's some text
-        </Card>
-    </div>
-    <!-- Force next columns to break to new line (still break lines after ) -->
-    <div class="w-100"></div>
+    @* foreach *@
+    @for (var page = 0; page < CardItems.Length / 4; page++)
+    {
+        string idName = @componentID + "-" + "page" + (page + 1).ToString();
+        componentPages.Add(idName);
+        string active = "";
+        if (page == 0) active = "active";
 
-    @*2nd-4th cards*@
-    <div class="col-md">
-        <Card Mode="" Title="Breaking news #2"
-              Img="https://th.bing.com/th/id/OIP.4MRQq4IfWbBxsF5sSh4U2QHaE8?pid=ImgDet&rs=1">
-            here's some text
-        </Card>
-    </div>
-    <div class="col-md">
-        <Card Mode="" Title="Breaking news #3"
-              Img="https://cdn.pixabay.com/photo/2020/08/25/18/28/workplace-5517744_960_720.jpg">
-            here's some text
-        </Card>
-    </div>
-    <div class="col-md">
-        <Card Mode="" Title="Breaking news #4"
-              Img="https://cdn.pixabay.com/photo/2020/08/25/18/28/workplace-5517744_960_720.jpg">
-            here's some text
-        </Card>
-    </div>
+        <div id=@idName class="container-page @active">
+            @for (var i = 0; i < 4; i++)
+            {
+                int pos = page + i;
+                mode = (cardCount % 4 == 1 ? "v-h" : "");
+                <div class="col-md">
+                    <Card Mode=@mode
+                  Date="@CardItems[pos].Date.ToString()"
+                  Title="@CardItems[pos].Title"
+                  Img="@CardItems[pos].ImgAddress">
+                        @CardItems[pos].Desc
+                    </Card>
+                </div>
+                if (cardCount % 4 == 1 || cardCount % 4 == 0)
+                {
+                    <div class="w-100"></div>
+                }
+                cardCount++;
+            }
+        </div>
+    }
 </div>
-@*Pages Buttons*@
 <div class="row justify-content-center gap-3">
-    <div @ref=button1 @onclick=@(()=> ToggleActiveButton(@button1)) class="button-page active"></div>
-    <div @ref=button2 @onclick=@(()=> ToggleActiveButton(@button2)) class="button-page"></div>
-    <div @ref=button3 @onclick=@(()=> ToggleActiveButton(@button3)) class="button-page"></div>
-    <div @ref=button4 @onclick=@(()=> ToggleActiveButton(@button4)) class="button-page"></div>
+    @for (var i = 0; i < cardCount / 4; i++)
+    {
+        string buttonName = "button" + (i + 1).ToString();
+        string idName = @componentID + "-" + "page" + (i + 1).ToString();
+        string className = @componentID + "-" + "button";
+        string active = "";
+        if (i == 0) active = "active";
+
+        <div @onclick=@(()=> ToggleActivePage(@idName, @className, @buttonName)) class="button-page @className @buttonName @active"></div>
+        //<div id=@idName onclick="toggleActivePage(event, @idName)" class="button-page @active"></div>
+
+    }
 </div>
+
+
+@*Pages Buttons*@
 @*More News Button*@
 <div class="text-center my-5">
     <a href="#">More</a>
 </div>
 
 @code {
-    private ElementReference button1;
-    private ElementReference button2;
-    private ElementReference button3;
-    private ElementReference button4;
+    private string mode = "";
+    private int cardCount = 1;
+
+    [Parameter]
+    public CardItem[]? @CardItems { get; set; }
+    private int totalCards = 0;
 
     [Parameter]
     public string @Title { get; set; } = "Title";
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
 
-    private async void ToggleActiveButton(ElementReference element)
+    private string? componentID;
+    private List<string> componentPages = new List<string>();
+
+    private async void ToggleActivePage(string id, string buttonClass, string button)
     {
-        await JSRuntime.InvokeVoidAsync("toggleUnActiveButton", button1);
-        await JSRuntime.InvokeVoidAsync("toggleUnActiveButton", button2);
-        await JSRuntime.InvokeVoidAsync("toggleUnActiveButton", button3);
-        await JSRuntime.InvokeVoidAsync("toggleUnActiveButton", button4);
-        await JSRuntime.InvokeVoidAsync("toggleActiveButton", element);
+        foreach (var item in componentPages)
+        {
+            await JSRuntime.InvokeVoidAsync("toggleUnActivePage", item);
+        }
+        await JSRuntime.InvokeVoidAsync("toggleActivePage", id);
+        await JSRuntime.InvokeVoidAsync("toggleActiveButton", button, buttonClass);
     }
 
-    private async void ToggleUnActiveButton(ElementReference element)
+    // get card Item data
+    protected override async Task OnInitializedAsync()
     {
-        await JSRuntime.InvokeVoidAsync("toggleUnActiveButton", element);
+        CardItems = await CardService.GetCardAsync(DateTime.Now);
     }
+
+    //Using IHandleEvent to stop rerendering which prevent the buttons from duplicating themself when clicking
+    Task IHandleEvent.HandleEventAsync(
+        EventCallbackWorkItem callback, object? arg) => callback.InvokeAsync(arg);
 
     //Blazor Pages, Routing, and Layouts [4 of 11] | Blazor for Beginners
     //https://youtu.be/dMc-S8VkbIE?t=592
     protected override void OnParametersSet()
     {
+        componentID = @Title.Replace(" ", "-");
+        totalCards = CardItems.Length;
         base.OnParametersSet();
     }
 }
