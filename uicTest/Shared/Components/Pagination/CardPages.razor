@@ -10,7 +10,7 @@
     <h1>@Title</h1>
 </div>
 
-<div class="container d-flex flex-row justify-content-center overflow-hidden">
+<div class="container d-flex flex-row justify-content-center align-content-center overflow-hidden">
     @* foreach *@
     @for (var page = 0; page < CardItems.Length / 4; page++)
     {
@@ -19,7 +19,7 @@
         string active = "";
         if (page == 0) active = "active";
 
-        <div id=@idName class="container-page @active">
+        <div id=@idName class="container-page @active overflow-hidden">
             <div class="row">
                 @for (var i = 0; i < 4; i++)
                 {
@@ -29,7 +29,7 @@
                         <Card Mode=@mode
                       Date="@CardItems[pos].Date.ToString()"
                       Title="@CardItems[pos].Title"
-                      Img="@CardItems[pos].ImgAddress">
+                      Img="@CardItems[pos].Img">
                             @CardItems[pos].Desc
                         </Card>
                     </div>

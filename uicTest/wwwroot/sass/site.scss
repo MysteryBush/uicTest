@@ -250,7 +250,7 @@ $border-radius-card: 60px;
 /* #endregion */
 
 /* #region pagination */
-$container-page-height-max: 400px;
+$container-page-height-max: 950px;
 
 $button-page-transition: 0.5s;
 $button-page-width: 28px;
@@ -258,18 +258,50 @@ $button-page-width-active: 89px;
 $button-page-color: #D9D9D9;
 $button-page-color-active: #003C71;
 
-.container-page {
-    opacity: 0%;
-    width: 0px;
-    max-height: $container-page-height-max;
-    transition: $button-page-transition;
+@keyframes container-page-show {
+    0% {
+        opacity: 0;
+    }
 
-    &.active {
-        width: 100%;
-        opacity: 100%;
-        //transition: $button-page-transition;
+    100% {
+        opacity: 1;
     }
 }
+
+@keyframes container-page-hide {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.container-page {
+    //display: none;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    //transition: $button-page-transition;
+    animation-name: container-page-hide;
+    animation-duration: $button-page-transition;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+
+    &.active {
+        //display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        //transition: $button-page-transition;
+        animation-name: container-page-show;
+        animation-duration: $button-page-transition;
+        animation-fill-mode: forwards;
+    }
+}
+
+
 
 .button-page {
     height: 28px;
@@ -284,7 +316,6 @@ $button-page-color-active: #003C71;
         transition: all $button-page-transition;
     }
 }
-
 /* #endregion */
 
 /* #region Navbar */

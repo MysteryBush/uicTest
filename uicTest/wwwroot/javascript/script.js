@@ -50,11 +50,16 @@ function toggleActiveButton(button, buttonClass) {
     var element = document.getElementsByClassName(button);
     var hide = document.getElementsByClassName(buttonClass);
 
-    for (i = 0; i < hide.length; i++) {
-        hide[i].classList.remove("active");
+    if (element[0].classList.contains("active")) {
+        
     }
-    element[0].classList.add("active");
-    element[0].classList.add("anim");
+    else {
+        for (i = 0; i < hide.length; i++) {
+            hide[i].classList.remove("active");
+        }
+        element[0].classList.add("active");
+        element[0].classList.add("anim");
+    }
 }
 
 

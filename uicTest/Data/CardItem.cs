@@ -6,7 +6,7 @@ namespace uicTest.Data
 
         public string? Title { get; set; } = "Card Title";
 
-        public string? ImgAddress { get; set; } = string.Empty;
+        public string? Img { get; set; } = string.Empty;
 
         public string? Desc { get; set; } = string.Empty;
     }

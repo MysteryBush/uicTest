@@ -13,8 +13,9 @@ namespace uicTest.Data
             {
                 Date = startDate.AddDays(index),
                 Title = Desc[Random.Shared.Next(Desc.Length)],
-                Desc = Desc[Random.Shared.Next(Desc.Length)]
-            }).ToArray());
+                Desc = Desc[Random.Shared.Next(Desc.Length)],
+                Img = "https://cdn.pixabay.com/photo/2020/08/25/18/28/workplace-5517744_960_720.jpg"
+            }).ToArray());;
         }
     }
 }
