@@ -54,6 +54,7 @@ function toggleActiveButton(button, buttonClass) {
         hide[i].classList.remove("active");
     }
     element[0].classList.add("active");
+    element[0].classList.add("anim");
 }
 
 

@@ -250,24 +250,41 @@ $border-radius-card: 60px;
 /* #endregion */
 
 /* #region pagination */
+$container-page-height-max: 400px;
+
+$button-page-transition: 0.5s;
+$button-page-width: 28px;
+$button-page-width-active: 89px;
+$button-page-color: #D9D9D9;
+$button-page-color-active: #003C71;
+
 .container-page {
-    display: none;
+    opacity: 0%;
+    width: 0px;
+    max-height: $container-page-height-max;
+    transition: $button-page-transition;
+
     &.active {
-        display: block;
+        width: 100%;
+        opacity: 100%;
+        //transition: $button-page-transition;
     }
 }
 
 .button-page {
     height: 28px;
     border-radius: 50px;
-    background: #D9D9D9;
-    width: 28px;
+    background: $button-page-color;
+    width: $button-page-width;
+    transition: all $button-page-transition;
 
     &.active {
-        background: #003C71;
-        width: 89px;
+        background: $button-page-color-active;
+        width: $button-page-width-active;
+        transition: all $button-page-transition;
     }
 }
+
 /* #endregion */
 
 /* #region Navbar */

@@ -10,7 +10,7 @@
     <h1>@Title</h1>
 </div>
 
-<div class="row">
+<div class="container d-flex flex-row justify-content-center overflow-hidden">
     @* foreach *@
     @for (var page = 0; page < CardItems.Length / 4; page++)
     {
@@ -20,24 +20,26 @@
         if (page == 0) active = "active";
 
         <div id=@idName class="container-page @active">
-            @for (var i = 0; i < 4; i++)
-            {
-                int pos = page + i;
-                mode = (cardCount % 4 == 1 ? "v-h" : "");
-                <div class="col-md">
-                    <Card Mode=@mode
-                  Date="@CardItems[pos].Date.ToString()"
-                  Title="@CardItems[pos].Title"
-                  Img="@CardItems[pos].ImgAddress">
-                        @CardItems[pos].Desc
-                    </Card>
-                </div>
-                if (cardCount % 4 == 1 || cardCount % 4 == 0)
+            <div class="row">
+                @for (var i = 0; i < 4; i++)
                 {
-                    <div class="w-100"></div>
+                    int pos = page + i;
+                    mode = (cardCount % 4 == 1 ? "v-h" : "");
+                    <div class="col-md">
+                        <Card Mode=@mode
+                      Date="@CardItems[pos].Date.ToString()"
+                      Title="@CardItems[pos].Title"
+                      Img="@CardItems[pos].ImgAddress">
+                            @CardItems[pos].Desc
+                        </Card>
+                    </div>
+                    if (cardCount % 4 == 1 || cardCount % 4 == 0)
+                    {
+                        <div class="w-100"></div>
+                    }
+                    cardCount++;
                 }
-                cardCount++;
-            }
+            </div>
         </div>
     }
 </div>
