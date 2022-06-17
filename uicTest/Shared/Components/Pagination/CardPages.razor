@@ -52,7 +52,7 @@
         string active = "";
         if (i == 0) active = "active";
 
-        <div @onclick=@(()=> ToggleActivePage(@idName, @className, @buttonName)) class="button-page @className @buttonName @active"></div>
+        <div @onclick=@(()=> ToggleActivePage(@idName, "container-page", @className, @buttonName)) class="button-page @className @buttonName @active"></div>
         //<div id=@idName onclick="toggleActivePage(event, @idName)" class="button-page @active"></div>
 
     }
@@ -81,14 +81,12 @@
     private string? componentID;
     private List<string> componentPages = new List<string>();
 
-    private async void ToggleActivePage(string id, string buttonClass, string button)
+    private async void ToggleActivePage(string id, string pageClass, string buttonClass, string button)
     {
-        foreach (var item in componentPages)
-        {
-            await JSRuntime.InvokeVoidAsync("toggleUnActivePage", item);
-        }
-        await JSRuntime.InvokeVoidAsync("toggleActivePage", id);
-        await JSRuntime.InvokeVoidAsync("toggleActiveButton", button, buttonClass);
+        //await JSRuntime.InvokeVoidAsync("toggleActivePage", id, pageClass);
+        //await JSRuntime.InvokeVoidAsync("toggleActiveButton", button, buttonClass);
+
+        await JSRuntime.InvokeVoidAsync("toggleActivePage", id, pageClass, button, buttonClass);
     }
 
     // get card Item data

@@ -27,41 +27,24 @@ function swipeUp(div) {
     var element = div;
 }
 
-//function toggleActiveButton(button) {
-//    var element = button
-//    element.classList.add("active");
-//}
+function toggleActivePage(page, pageClass, button, buttonClass) {
+    var elementPage = document.getElementById(page);
+    var elementButton = document.getElementsByClassName(button);
+    var hidePage = document.getElementsByClassName(pageClass);
+    var hideButton = document.getElementsByClassName(buttonClass);
 
-//function toggleUnActiveButton(button) {
-//    var element = button
-//    element.classList.remove("active");
-//}
+    if (elementPage.classList.contains("active") || elementButton[0].classList.contains("active")) {
 
-function toggleActivePage(page) {
-    document.getElementById(page).classList.add("active");
-    //evt.currentTarget.classList.add("active");
-}
-
-function toggleUnActivePage(page) {
-    document.getElementById(page).classList.remove("active");
-}
-
-function toggleActiveButton(button, buttonClass) {
-    var element = document.getElementsByClassName(button);
-    var hide = document.getElementsByClassName(buttonClass);
-
-    if (element[0].classList.contains("active")) {
-        
     }
     else {
-        for (i = 0; i < hide.length; i++) {
-            hide[i].classList.remove("active");
+        for (i = 0; i < hidePage.length; i++) {
+            hidePage[i].classList.remove("active");
+            hideButton[i].classList.remove("active");
         }
-        element[0].classList.add("active");
-        element[0].classList.add("anim");
+        elementPage.classList.add("active");
+        elementButton[0].classList.add("active");
     }
 }
-
 
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
 var prevScrollpos = window.pageYOffset;
