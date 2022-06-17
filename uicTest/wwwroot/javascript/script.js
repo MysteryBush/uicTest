@@ -27,6 +27,39 @@ function swipeUp(div) {
     var element = div;
 }
 
+function toggleNavDropdownDesktop(element, navClass) {
+    var showDropdown = element;
+    var hideDropdown = document.getElementsByClassName(navClass);
+
+    if (showDropdown.classList.contains("dropdown-show")) {
+        showDropdown.classList.remove("dropdown-show");
+    }
+    else {
+        for (i = 0; i < hideDropdown.length; i++) {
+            hideDropdown[i].classList.remove("dropdown-show");
+        }
+        showDropdown.classList.add("dropdown-show");
+    }
+}
+
+function toggleNavDropdownDesktopChild(element, parent, navClass) {
+    var showDropdown = element;
+    var parentDropdown = parent;
+    var hideDropdown = document.getElementsByClassName(navClass);
+
+    if (showDropdown.classList.contains("dropdown-show")) {
+        parentDropdown.classList.toggle("dropdown-show");
+        showDropdown.classList.remove("dropdown-show");
+    }
+    else {
+        for (i = 0; i < hideDropdown.length; i++) {
+            hideDropdown[i].classList.remove("dropdown-show");
+        }
+        parentDropdown.classList.toggle("dropdown-show");
+        showDropdown.classList.add("dropdown-show");
+    }
+}
+
 function toggleActivePage(page, pageClass, button, buttonClass) {
     var elementPage = document.getElementById(page);
     var elementButton = document.getElementsByClassName(button);

@@ -17,7 +17,7 @@
                 <li class="nav-item">
                     <NavLink class="nav-link" href="" Match="NavLinkMatch.All">Home</NavLink>
                 </li>
-                <li @ref=navDesktopDropDown1 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDesktopDropDown1))>
+                <li @ref=navDesktopDropdown1 class="nav-item dropdown @navDropdownDesktop" @onclick=@(()=> @ToggleNavDropdownDesktop(navDesktopDropdown1))>
                     <NavLink class="nav-link dropdown-toggle">About Us</NavLink>
                     <ul class="dropdown-content" aria-labelledby="">
                         <li><NavItem isDropdownItem=true ItemName="History"></NavItem></li>
@@ -30,7 +30,7 @@
                         <li><NavItem isDropdownItem=true ItemName="Contact Us"></NavItem></li>
                     </ul>
                 </li>
-                <li @ref=navDesktopDropDown2 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDesktopDropDown2))>
+                <li @ref=navDesktopDropdown2 class="nav-item dropdown @navDropdownDesktop" @onclick=@(()=> @ToggleNavDropdownDesktop(navDesktopDropdown2))>
                     <NavLink class="nav-link dropdown-toggle">News</NavLink>
                     <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                         <li><NavItem isDropdownItem=true ItemName="Announcements"></NavItem></li>
@@ -38,19 +38,19 @@
                         <li><NavItem isDropdownItem=true ItemName="Press and Media"></NavItem></li>
                     </ul>
                 </li>
-                <li @ref=navDesktopDropDown3 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDesktopDropDown3))>
+                <li @ref=navDesktopDropdown3 class="nav-item dropdown @navDropdownDesktop" @onclick=@(()=> @ToggleNavDropdownDesktop(navDesktopDropdown3))>
                     <NavLink class="nav-link dropdown-toggle">Programs</NavLink>
                     <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                         <li><NavItem isDropdownItem=true ItemName="CMDT"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="GE"></NavItem></li>
                     </ul>
                 </li>
-                <li @ref=navDesktopDropDown4 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDesktopDropDown4))>
+                <li @ref=navDesktopDropdown4 class="nav-item dropdown @navDropdownDesktop" @onclick=@(()=> @ToggleNavDropdownDesktop(navDesktopDropdown4))>
                     <NavLink class="nav-link dropdown-toggle">Student</NavLink>
                     <ul class="dropdown-content">
                         @*This divider is hidden until a method to change color is found*@
                         @*<li><hr class="dropdown-divider"></li>*@
-                        <li @ref=navDesktopDropDown5 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDesktopDropDown5,@navDesktopDropDown4))>
+                        <li @ref=navDesktopDropdown4Sub1 class="dropdown-item dropdown @navDropdownDesktopSubGroup4" @onclick=@(()=> @ToggleNavDropdownDesktopChild(navDesktopDropdown4Sub1, navDesktopDropdown4, @navDropdownDesktopSubGroup4))>
                             <NavLink class="nav-link dropdown-toggle">Student Activities</NavLink>
                             <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Student Association"></NavItem></li>
@@ -60,7 +60,7 @@
                             </ul>
                         </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li @ref=navDesktopDropDown6 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDesktopDropDown6,@navDesktopDropDown4))>
+                        <li @ref=navDesktopDropdown4Sub2 class="dropdown-item dropdown @navDropdownDesktopSubGroup4" @onclick=@(()=> @ToggleNavDropdownDesktopChild(navDesktopDropdown4Sub2, navDesktopDropdown4, @navDropdownDesktopSubGroup4))>
                             <NavLink class="nav-link dropdown-toggle">Student Services</NavLink>
                             <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Health Service"></NavItem></li>
@@ -70,7 +70,7 @@
                             </ul>
                         </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li @ref=navDesktopDropDown7 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDesktopDropDown7,@navDesktopDropDown4))>
+                        <li @ref=navDesktopDropdown4Sub3 class="dropdown-item dropdown @navDropdownDesktopSubGroup4" @onclick=@(()=> @ToggleNavDropdownDesktopChild(navDesktopDropdown4Sub3, navDesktopDropdown4, @navDropdownDesktopSubGroup4))>
                             <NavLink class="nav-link dropdown-toggle">Academic Service</NavLink>
                             <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Exchange Programs"></NavItem></li>
@@ -78,11 +78,11 @@
                         </li>
                     </ul>
                 </li>
-                <li @ref=navDesktopDropDown8 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDesktopDropDown8))>
+                <li @ref=navDesktopDropdown5 class="nav-item dropdown @navDropdownDesktop" @onclick=@(()=> @ToggleNavDropdownDesktop(navDesktopDropdown5))>
                     <NavLink class="nav-link dropdown-toggle">PSU Online Systems</NavLink>
                     <ul class="dropdown-content">
                         @*This divider is hidden until a method to change color is found*@
-                        <li @ref=navDesktopDropDown9 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDesktopDropDown9,@navDesktopDropDown8))>
+                        <li @ref=navDesktopDropdown5Sub1 class="dropdown-item dropdown @navDropdownDesktopSubGroup5" @onclick=@(()=> @ToggleNavDropdownDesktopChild(navDesktopDropdown5Sub1, navDesktopDropdown5, @navDropdownDesktopSubGroup5))>
                             <NavLink class="nav-link dropdown-toggle">Curriculum</NavLink>
                             <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="MIS-DSS"></NavItem></li>
@@ -94,7 +94,7 @@
                             </ul>
                         </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li @ref=navDesktopDropDown10 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDesktopDropDown10,@navDesktopDropDown8))>
+                        <li @ref=navDesktopDropdown5Sub2 class="dropdown-item dropdown @navDropdownDesktopSubGroup5" @onclick=@(()=> @ToggleNavDropdownDesktopChild(navDesktopDropdown5Sub2, navDesktopDropdown5, @navDropdownDesktopSubGroup5))>
                             <NavLink class="nav-link dropdown-toggle">Cooperative Education</NavLink>
                             <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Dormitory Reservation"></NavItem></li>
@@ -256,6 +256,10 @@
     </div>
 </nav>
 @code {
+    private string navDropdownDesktop = "navDropdownDesktop";
+    private string navDropdownDesktopSubGroup4 = "navDropdownDesktopSub4";
+    private string navDropdownDesktopSubGroup5 = "navDropdownDesktopSub5";
+
     private ElementReference navMobile;
     [Parameter] public EventCallback OnCancel { get; set; }
     private ElementReference navDropDown1;
@@ -269,16 +273,17 @@
     private ElementReference navDropDown9;
     private ElementReference navDropDown10;
 
-    private ElementReference navDesktopDropDown1;
-    private ElementReference navDesktopDropDown2;
-    private ElementReference navDesktopDropDown3;
-    private ElementReference navDesktopDropDown4;
-    private ElementReference navDesktopDropDown5;
-    private ElementReference navDesktopDropDown6;
-    private ElementReference navDesktopDropDown7;
-    private ElementReference navDesktopDropDown8;
-    private ElementReference navDesktopDropDown9;
-    private ElementReference navDesktopDropDown10;
+    private ElementReference navDesktopDropdown1;
+    private ElementReference navDesktopDropdown2;
+    private ElementReference navDesktopDropdown3;
+    private ElementReference navDesktopDropdown4;
+    private ElementReference navDesktopDropdown4Sub1;
+    private ElementReference navDesktopDropdown4Sub2;
+    private ElementReference navDesktopDropdown4Sub3;
+    private ElementReference navDesktopDropdown5;
+    private ElementReference navDesktopDropdown5Sub1;
+    private ElementReference navDesktopDropdown5Sub2;
+
 
     private bool collapseNavMenu = false;
     private bool firstClick = false;
@@ -294,9 +299,14 @@
     }
 
     // desktop version
-    private void ToggleDropDownDesktop()
+    private async void ToggleNavDropdownDesktop(ElementReference element)
     {
+        await JSRuntime.InvokeVoidAsync("toggleNavDropdownDesktop", element, @navDropdownDesktop);
+    }
 
+    private async void ToggleNavDropdownDesktopChild(ElementReference element, ElementReference parent, string subClass)
+    {
+        await JSRuntime.InvokeVoidAsync("toggleNavDropdownDesktopChild", element, parent, subClass);
     }
 
     // mobile version
