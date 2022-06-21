@@ -42,6 +42,26 @@ function toggleNavDropdownDesktop(element, navClass) {
     }
 }
 
+//This one makes other unfocused child to hide themself
+//function toggleNavDropdownDesktopChild(element, parent, navClass) {
+//    var showDropdown = element;
+//    var parentDropdown = parent;
+//    var hideDropdown = document.getElementsByClassName(navClass);
+
+//    if (showDropdown.classList.contains("dropdown-show")) {
+//        parentDropdown.classList.toggle("dropdown-show");
+//        showDropdown.classList.remove("dropdown-show");
+//    }
+//    else {
+//        for (i = 0; i < hideDropdown.length; i++) {
+//            hideDropdown[i].classList.remove("dropdown-show");
+//        }
+//        parentDropdown.classList.toggle("dropdown-show");
+//        showDropdown.classList.add("dropdown-show");
+//    }
+//}
+
+//This one still keeps other unfocused child
 function toggleNavDropdownDesktopChild(element, parent, navClass) {
     var showDropdown = element;
     var parentDropdown = parent;
@@ -52,9 +72,6 @@ function toggleNavDropdownDesktopChild(element, parent, navClass) {
         showDropdown.classList.remove("dropdown-show");
     }
     else {
-        for (i = 0; i < hideDropdown.length; i++) {
-            hideDropdown[i].classList.remove("dropdown-show");
-        }
         parentDropdown.classList.toggle("dropdown-show");
         showDropdown.classList.add("dropdown-show");
     }

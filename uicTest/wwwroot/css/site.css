@@ -532,14 +532,18 @@ nav > .container-fluid {
 /* This .dropdown is started from Blazor's default CSS code */
 .dropdown-content {
   background-color: #3A5E80;
-  display: none;
+  transition: 0.1s;
+  height: 0px;
+  max-height: 0%;
+  padding: 0px;
   position: relative;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
 }
 .dropdown-show > .dropdown-content {
-  display: block;
+  transition: 1s;
+  height: auto;
+  max-height: 100%;
 }
 .dropdown-item.active, .dropdown-item:active {
   background-color: #3A5E80;
@@ -620,6 +624,11 @@ nav > .container-fluid {
   /*navbar have relative dropdown*/
   .dropdown-content {
     position: fixed;
+  }
+
+  /* if desktop navbar have sub-dropdown, that sub-dropdown's position is relative */
+  .dropdown-item > .dropdown-content {
+    position: relative;
   }
 
   .dropdown-show > .dropdown-content {
