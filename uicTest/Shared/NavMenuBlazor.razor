@@ -19,7 +19,7 @@
                 </li>
                 <li @ref=navDesktopDropdown1 class="nav-item dropdown @navDropdownDesktop" @onclick=@(()=> @ToggleNavDropdownDesktop(navDesktopDropdown1))>
                     <NavLink class="nav-link dropdown-toggle">About Us</NavLink>
-                    <ul class="dropdown-content overflow-hidden" aria-labelledby="">
+                    <ul class="dropdown-content" aria-labelledby="">
                         <li><NavItem isDropdownItem=true ItemName="History"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="Vision & Mission"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="Executives"></NavItem></li>
@@ -32,7 +32,7 @@
                 </li>
                 <li @ref=navDesktopDropdown2 class="nav-item dropdown @navDropdownDesktop" @onclick=@(()=> @ToggleNavDropdownDesktop(navDesktopDropdown2))>
                     <NavLink class="nav-link dropdown-toggle">News</NavLink>
-                    <ul class="dropdown-content overflow-hidden" aria-labelledby="navbarDropdownMenuLink">
+                    <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                         <li><NavItem isDropdownItem=true ItemName="Announcements"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="Job Vacancies"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="Press and Media"></NavItem></li>
@@ -40,19 +40,19 @@
                 </li>
                 <li @ref=navDesktopDropdown3 class="nav-item dropdown @navDropdownDesktop" @onclick=@(()=> @ToggleNavDropdownDesktop(navDesktopDropdown3))>
                     <NavLink class="nav-link dropdown-toggle">Programs</NavLink>
-                    <ul class="dropdown-content overflow-hidden" aria-labelledby="navbarDropdownMenuLink">
+                    <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                         <li><NavItem isDropdownItem=true ItemName="CMDT"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="GE"></NavItem></li>
                     </ul>
                 </li>
                 <li @ref=navDesktopDropdown4 class="nav-item dropdown @navDropdownDesktop" @onclick=@(()=> @ToggleNavDropdownDesktop(navDesktopDropdown4))>
                     <NavLink class="nav-link dropdown-toggle">Student</NavLink>
-                    <ul class="dropdown-content overflow-hidden">
+                    <ul class="dropdown-content">
                         @*This divider is hidden until a method to change color is found*@
                         @*<li><hr class="dropdown-divider"></li>*@
                         <li @ref=navDesktopDropdown4Sub1 class="dropdown-item dropdown @navDropdownDesktopSubGroup4" @onclick=@(()=> @ToggleNavDropdownDesktopChild(navDesktopDropdown4Sub1, navDesktopDropdown4, @navDropdownDesktopSubGroup4))>
                             <NavLink class="nav-link dropdown-toggle">Student Activities</NavLink>
-                            <ul class="dropdown-content overflow-hidden">
+                            <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Student Association"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Club and Acitivity Transcript"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Student Discipline Rules and Regulations"></NavItem></li>
@@ -62,7 +62,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li @ref=navDesktopDropdown4Sub2 class="dropdown-item dropdown @navDropdownDesktopSubGroup4" @onclick=@(()=> @ToggleNavDropdownDesktopChild(navDesktopDropdown4Sub2, navDesktopDropdown4, @navDropdownDesktopSubGroup4))>
                             <NavLink class="nav-link dropdown-toggle">Student Services</NavLink>
-                            <ul class="dropdown-content overflow-hidden">
+                            <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Health Service"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Counseling Service"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Housing"></NavItem></li>
@@ -72,7 +72,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li @ref=navDesktopDropdown4Sub3 class="dropdown-item dropdown @navDropdownDesktopSubGroup4" @onclick=@(()=> @ToggleNavDropdownDesktopChild(navDesktopDropdown4Sub3, navDesktopDropdown4, @navDropdownDesktopSubGroup4))>
                             <NavLink class="nav-link dropdown-toggle">Academic Service</NavLink>
-                            <ul class="dropdown-content overflow-hidden">
+                            <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Exchange Programs"></NavItem></li>
                             </ul>
                         </li>
@@ -80,11 +80,11 @@
                 </li>
                 <li @ref=navDesktopDropdown5 class="nav-item dropdown @navDropdownDesktop" @onclick=@(()=> @ToggleNavDropdownDesktop(navDesktopDropdown5))>
                     <NavLink class="nav-link dropdown-toggle">PSU Online Systems</NavLink>
-                    <ul class="dropdown-content overflow-hidden">
+                    <ul class="dropdown-content">
                         @*This divider is hidden until a method to change color is found*@
                         <li @ref=navDesktopDropdown5Sub1 class="dropdown-item dropdown @navDropdownDesktopSubGroup5" @onclick=@(()=> @ToggleNavDropdownDesktopChild(navDesktopDropdown5Sub1, navDesktopDropdown5, @navDropdownDesktopSubGroup5))>
                             <NavLink class="nav-link dropdown-toggle">Curriculum</NavLink>
-                            <ul class="dropdown-content overflow-hidden">
+                            <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="MIS-DSS"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="HRMIS"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Course Spec"></NavItem></li>
@@ -96,7 +96,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li @ref=navDesktopDropdown5Sub2 class="dropdown-item dropdown @navDropdownDesktopSubGroup5" @onclick=@(()=> @ToggleNavDropdownDesktopChild(navDesktopDropdown5Sub2, navDesktopDropdown5, @navDropdownDesktopSubGroup5))>
                             <NavLink class="nav-link dropdown-toggle">Cooperative Education</NavLink>
-                            <ul class="dropdown-content overflow-hidden">
+                            <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Dormitory Reservation"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Registration Office"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="SIS"></NavItem></li>
@@ -140,7 +140,7 @@
                 </li>
                 <li @ref=navDropDown1 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown1))>
                     <NavLink class="nav-link dropdown-toggle">About Us</NavLink>
-                    <ul class="dropdown-content overflow-hidden" aria-labelledby="navbarDropdownMenuLink">
+                    <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                         <li><NavItem isDropdownItem=true ItemName="History"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="Vision & Mission"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="Executives"></NavItem></li>
@@ -153,7 +153,7 @@
                 </li>
                 <li @ref=navDropDown2 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown2))>
                     <NavLink class="nav-link dropdown-toggle">News</NavLink>
-                    <ul class="dropdown-content overflow-hidden" aria-labelledby="navbarDropdownMenuLink">
+                    <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                         <li><NavItem isDropdownItem=true ItemName="Announcements"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="Job Vacancies"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="Press and Media"></NavItem></li>
@@ -161,19 +161,19 @@
                 </li>
                 <li @ref=navDropDown3 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown3))>
                     <NavLink class="nav-link dropdown-toggle">Programs</NavLink>
-                    <ul class="dropdown-content overflow-hidden" aria-labelledby="navbarDropdownMenuLink">
+                    <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                         <li><NavItem isDropdownItem=true ItemName="CMDT"></NavItem></li>
                         <li><NavItem isDropdownItem=true ItemName="GE"></NavItem></li>
                     </ul>
                 </li>
                 <li @ref=navDropDown4 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown4))>
                     <NavLink class="nav-link dropdown-toggle">Student</NavLink>
-                    <ul class="dropdown-content overflow-hidden">
+                    <ul class="dropdown-content">
                         @*This divider is hidden until a method to change color is found*@
                         @*<li><hr class="dropdown-divider"></li>*@
                         <li @ref=navDropDown5 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown5,@navDropDown4))>
                             <NavLink class="nav-link dropdown-toggle">Student Activities</NavLink>
-                            <ul class="dropdown-content overflow-hidden">
+                            <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Student Association"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Club and Acitivity Transcript"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Student Discipline Rules and Regulations"></NavItem></li>
@@ -183,7 +183,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li @ref=navDropDown6 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown6,@navDropDown4))>
                             <NavLink class="nav-link dropdown-toggle">Student Services</NavLink>
-                            <ul class="dropdown-content overflow-hidden">
+                            <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Health Service"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Counseling Service"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Housing"></NavItem></li>
@@ -193,7 +193,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li @ref=navDropDown7 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown7,@navDropDown4))>
                             <NavLink class="nav-link dropdown-toggle">Academic Service</NavLink>
-                            <ul class="dropdown-content overflow-hidden">
+                            <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Exchange Programs"></NavItem></li>
                             </ul>
                         </li>
@@ -201,11 +201,11 @@
                 </li>
                 <li @ref=navDropDown8 class="nav-item dropdown" @onclick=@(()=> @ToggleNavDropDown(@navDropDown8))>
                     <NavLink class="nav-link dropdown-toggle">PSU Online Systems</NavLink>
-                    <ul class="dropdown-content overflow-hidden">
+                    <ul class="dropdown-content">
                         @*This divider is hidden until a method to change color is found*@
                         <li @ref=navDropDown9 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown9,@navDropDown8))>
                             <NavLink class="nav-link dropdown-toggle">Curriculum</NavLink>
-                            <ul class="dropdown-content overflow-hidden">
+                            <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="MIS-DSS"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="HRMIS"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Course Spec"></NavItem></li>
@@ -217,7 +217,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li @ref=navDropDown10 class="dropdown-item dropdown" @onclick=@(()=> @ToggleNavDropDownChild(@navDropDown10,@navDropDown8))>
                             <NavLink class="nav-link dropdown-toggle">Cooperative Education</NavLink>
-                            <ul class="dropdown-content overflow-hidden">
+                            <ul class="dropdown-content">
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Dormitory Reservation"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="Registration Office"></NavItem></li>
                                 <li><NavItem isDropdownItem=true subItem=true ItemName="SIS"></NavItem></li>

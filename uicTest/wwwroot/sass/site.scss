@@ -614,24 +614,61 @@ nav {
 
     &-content {
         background-color: $secondary-color;
+        overflow: hidden;
         //display: none;
-        transition: 0.1s;
-        height: 0px;
+        transition: 0.5s;
         max-height: 0%;
         //padding: 0px 16px;
         padding: 0px;
         position: relative;
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        /*
+
+        li {
+            transition: 0.5s;
+            //display: none;
+            max-height: 0%;
+            //transform: scaleY(0);
+            //transform: translateY(200%);
+        }
+
+        a.dropdown-item {
+            transition: 0.5s;
+            //display: none;
+            max-height: 0%;
+            //transform: scaleY(0);
+            //transform: translateY(-100%);
+            //position: absolute;
+        }
+        */
     }
 
     &-show {
         > .dropdown-content {
             //display: block;
-            transition: 1s;
-            height: auto;
+            transition: 0.5s;
             max-height: 100%;
             //padding: 12px 16px;
+            /*
+
+            li {
+                transition: 0.5s;
+                //display: block;
+                max-height: 100%;
+                //transform: scaleY(1);
+                //transform: translateY(0%);
+            }
+
+            a.dropdown-item {
+                transition: 0.5s;
+                //display: block;
+                max-height: 100%;
+                //transform: scaleY(1);
+                transform: translateY(0%);
+                //position: absolute;
+            }
+            */
         }
     }
 
@@ -730,7 +767,6 @@ nav {
     .dropdown-content {
         position: fixed;
     }
-
     /* if desktop navbar have sub-dropdown, that sub-dropdown's position is relative */
     .dropdown-item {
         > .dropdown-content {
