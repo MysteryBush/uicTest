@@ -606,6 +606,64 @@ nav {
     /*color: #FFFFFF;*/
 }
 
+/* dropdown animation */
+
+@keyframes dropdown-show {
+    0% {
+        /* Sets the initial height to the measured height of the element */
+        //height: 0;
+        height: auto;
+        max-height: 0%;
+    }
+
+    30% {
+    }
+
+    60% {
+        max-height: 100%;
+        /* Makes sur the height and bottom margin stay constant
+       till this point in the animation */
+        //height: 0;
+    }
+
+    100% {
+        /* Keeps the element out of the screen. If it's not there,
+     * the element comes back to its original position
+     */
+        max-height: 100%;
+        /* Makes the blank space collapse */
+        height: auto;
+    }
+}
+
+@keyframes dropdown-hide {
+    0% {
+        /* Sets the initial height to the measured height of the element */
+        height: auto;
+        max-height: 100%;
+    }
+
+    30% {
+    }
+
+    60% {
+        max-height: 0%;
+        /* Makes sur the height and bottom margin stay constant
+       till this point in the animation */
+        height: auto;
+    }
+
+    100% {
+        /* Keeps the element out of the screen. If it's not there,
+     * the element comes back to its original position
+     */
+        max-height: 0%;
+        /* Makes the blank space collapse */
+        height: 0;
+        margin-bottom: 0;
+    }
+}
+
 /* This .dropdown is started from Blazor's default CSS code */
 .dropdown {
 
@@ -616,59 +674,27 @@ nav {
         background-color: $secondary-color;
         overflow: hidden;
         //display: none;
-        transition: 0.5s;
-        max-height: 0%;
+        //transition: 0.5s;
+        //max-height: 0%;
+        animation-name: dropdown-hide;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
         //padding: 0px 16px;
         padding: 0px;
         position: relative;
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        /*
-
-        li {
-            transition: 0.5s;
-            //display: none;
-            max-height: 0%;
-            //transform: scaleY(0);
-            //transform: translateY(200%);
-        }
-
-        a.dropdown-item {
-            transition: 0.5s;
-            //display: none;
-            max-height: 0%;
-            //transform: scaleY(0);
-            //transform: translateY(-100%);
-            //position: absolute;
-        }
-        */
     }
 
     &-show {
         > .dropdown-content {
             //display: block;
-            transition: 0.5s;
-            max-height: 100%;
+            //transition: 0.5s;
+            //max-height: 100%;
+            animation-name: dropdown-show;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
             //padding: 12px 16px;
-            /*
-
-            li {
-                transition: 0.5s;
-                //display: block;
-                max-height: 100%;
-                //transform: scaleY(1);
-                //transform: translateY(0%);
-            }
-
-            a.dropdown-item {
-                transition: 0.5s;
-                //display: block;
-                max-height: 100%;
-                //transform: scaleY(1);
-                transform: translateY(0%);
-                //position: absolute;
-            }
-            */
         }
     }
 

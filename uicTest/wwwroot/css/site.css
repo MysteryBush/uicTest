@@ -59,7 +59,7 @@ a, .btn-link {
 }
 
 .card img {
-  max-height: 700px;
+  max-height: 200px;
   object-fit: cover;
 }
 .card .img-fluid {
@@ -520,58 +520,65 @@ nav > .container-fluid {
   color: #D9D9D9;
 }
 
+/* dropdown animation */
+@keyframes dropdown-show {
+  0% {
+    /* Sets the initial height to the measured height of the element */
+    height: auto;
+    max-height: 0%;
+  }
+  60% {
+    max-height: 100%;
+    /* Makes sur the height and bottom margin stay constant
+    till this point in the animation */
+  }
+  100% {
+    /* Keeps the element out of the screen. If it's not there,
+    * the element comes back to its original position
+    */
+    max-height: 100%;
+    /* Makes the blank space collapse */
+    height: auto;
+  }
+}
+@keyframes dropdown-hide {
+  0% {
+    /* Sets the initial height to the measured height of the element */
+    height: auto;
+    max-height: 100%;
+  }
+  60% {
+    max-height: 0%;
+    /* Makes sur the height and bottom margin stay constant
+    till this point in the animation */
+    height: auto;
+  }
+  100% {
+    /* Keeps the element out of the screen. If it's not there,
+    * the element comes back to its original position
+    */
+    max-height: 0%;
+    /* Makes the blank space collapse */
+    height: 0;
+    margin-bottom: 0;
+  }
+}
 /* This .dropdown is started from Blazor's default CSS code */
 .dropdown-content {
   background-color: #3A5E80;
   overflow: hidden;
-  transition: 0.5s;
-  max-height: 0%;
+  animation-name: dropdown-hide;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
   padding: 0px;
   position: relative;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  /*
-
-  li {
-      transition: 0.5s;
-      //display: none;
-      max-height: 0%;
-      //transform: scaleY(0);
-      //transform: translateY(200%);
-  }
-
-  a.dropdown-item {
-      transition: 0.5s;
-      //display: none;
-      max-height: 0%;
-      //transform: scaleY(0);
-      //transform: translateY(-100%);
-      //position: absolute;
-  }
-  */
 }
 .dropdown-show > .dropdown-content {
-  transition: 0.5s;
-  max-height: 100%;
-  /*
-
-  li {
-      transition: 0.5s;
-      //display: block;
-      max-height: 100%;
-      //transform: scaleY(1);
-      //transform: translateY(0%);
-  }
-
-  a.dropdown-item {
-      transition: 0.5s;
-      //display: block;
-      max-height: 100%;
-      //transform: scaleY(1);
-      transform: translateY(0%);
-      //position: absolute;
-  }
-  */
+  animation-name: dropdown-show;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
 .dropdown-item.active, .dropdown-item:active {
   background-color: #3A5E80;

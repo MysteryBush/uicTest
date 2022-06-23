@@ -1,5 +1,4 @@
-﻿
-window.setElementText = (element, text) => {
+﻿window.setElementText = (element, text) => {
     console.log(element);
     element.innerText = text;
 }
