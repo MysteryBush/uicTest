@@ -5,7 +5,15 @@
 
 function toggleNavDropDown(dropdown) {
     var element = dropdown;
-    element.classList.toggle("dropdown-show");
+    //element.classList.toggle("dropdown-show");
+    if (element.classList.contains("dropdown-show")) {
+        element.classList.add("dropdown-hide");
+        element.classList.remove("dropdown-show");
+    }
+    else {
+        element.classList.add("dropdown-show");
+        element.classList.remove("dropdown-hide");
+    }
 }
 
 function toggleNavDropDownChild(child, parent) {
@@ -13,13 +21,25 @@ function toggleNavDropDownChild(child, parent) {
     var element2 = parent;
     //why is classList.add not recognized?
     /*element2.classList.add("dropdown-show");*/
-    element2.classList.toggle("dropdown-show");
-    element.classList.toggle("dropdown-show");
+    //element2.classList.toggle("dropdown-show");
+    //element.classList.toggle("dropdown-show");
+    if (element.classList.contains("dropdown-show")) {
+        element.classList.add("dropdown-hide");
+        element.classList.remove("dropdown-show");
+        element2.classList.toggle("dropdown-show");
+    }
+    else {
+        element.classList.add("dropdown-show");
+        element.classList.remove("dropdown-hide");
+        element2.classList.toggle("dropdown-show");
+    }
 }
 
 function hideNavDropDown(dropdown) {
     var element = dropdown;
+    element.classList.add("dropdown-hide");
     element.classList.remove("dropdown-show");
+
 }
 
 function swipeUp(div) {
@@ -31,13 +51,18 @@ function toggleNavDropdownDesktop(element, navClass) {
     var hideDropdown = document.getElementsByClassName(navClass);
 
     if (showDropdown.classList.contains("dropdown-show")) {
+        showDropdown.classList.add("dropdown-hide");
         showDropdown.classList.remove("dropdown-show");
     }
     else {
         for (i = 0; i < hideDropdown.length; i++) {
-            hideDropdown[i].classList.remove("dropdown-show");
+            if (hideDropdown[i].classList.contains("dropdown-show")) {
+                hideDropdown[i].classList.remove("dropdown-show");
+                hideDropdown[i].classList.add("dropdown-hide");
+            }
         }
         showDropdown.classList.add("dropdown-show");
+        showDropdown.classList.remove("dropdown-hide");
     }
 }
 
@@ -68,11 +93,13 @@ function toggleNavDropdownDesktopChild(element, parent, navClass) {
 
     if (showDropdown.classList.contains("dropdown-show")) {
         parentDropdown.classList.toggle("dropdown-show");
+        showDropdown.classList.add("dropdown-hide");
         showDropdown.classList.remove("dropdown-show");
     }
     else {
         parentDropdown.classList.toggle("dropdown-show");
         showDropdown.classList.add("dropdown-show");
+        showDropdown.classList.remove("dropdown-hide");
     }
 }
 

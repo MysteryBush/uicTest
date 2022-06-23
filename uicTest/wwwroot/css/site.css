@@ -567,9 +567,7 @@ nav > .container-fluid {
 .dropdown-content {
   background-color: #3A5E80;
   overflow: hidden;
-  animation-name: dropdown-hide;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
+  height: 0;
   padding: 0px;
   position: relative;
   min-width: 160px;
@@ -577,6 +575,11 @@ nav > .container-fluid {
 }
 .dropdown-show > .dropdown-content {
   animation-name: dropdown-show;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.dropdown-hide > .dropdown-content {
+  animation-name: dropdown-hide;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
