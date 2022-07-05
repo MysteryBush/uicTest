@@ -1,49 +1,93 @@
-﻿<nav>
-    <footer class="d-flex flex-column align-items-center flex-md-row-reverse align-items-md-start justify-content-between">
-        <div class="mt-5 me-md-5">
-            <span class="text-white">© PRINCE OF SONGKLA UNIVERSITY INTERNATIONAL COLLEGE 2022</span>
+﻿@using uicTest.Shared.Components.Nav
+
+<nav>
+    <footer class="d-flex flex-column align-items-center flex-md-row align-items-md-start justify-content-between px-5 py-3">
+        <div class="col-md  d-flex flex-column align-content-center mt-5 me-md-5">
+            @*<span class="text-white">© PRINCE OF SONGKLA UNIVERSITY INTERNATIONAL COLLEGE 2022</span>*@
+            @*<img src="../images/psuic-logo.png" alt="">*@
+            <div class="">
+                <img class="img-fluid" src="../images/psuic-logo.png" alt="">
+            </div>
             <p class="bold">PRINCE OF SONGKLA UNIVERSITY INTERNATIONAL COLLEGE</p>
             <p>12th floor, Learning Resource Center (LRC)</p>
             <p>15 Kanjanvanich Road, Hat Yai, Songkhla 90110</p>
             <p>+66 (0) 7428 2831, +66 (0) 7428 9404 | psuic-info@psu.ac.th</p>
         </div>
-        <div class="col-md-6 mt-md-5 px-5 py-3 py-md-0">
-            <NavLink class="" href="history">History</NavLink>
-            <NavLink class="" href="vision-and-mission">Vision & Mission</NavLink>
-            <NavLink class="" href="executives">Executives</NavLink>
-            <NavLink class="" href="faculty-members">Faculty Members</NavLink>
-            <NavLink class="" href="staff">Staff</NavLink>
-            <NavLink class="" href="cooperate-identity">Cooperate Identity</NavLink>
-            <NavLink class="" href="annual-report">Annual Report</NavLink>
-            <NavLink class="" href="contact-us">Contact Us</NavLink>
-            <NavLink class="" href="announcements">Announcements</NavLink>
-            <NavLink class="" href="job-vacancies">Job Vacancies</NavLink>
-            <NavLink class="" href="press-and-media">Press and Media</NavLink>
-            <NavLink class="" href="cmdt">CMDT</NavLink>
-            <NavLink class="" href="ge">GE</NavLink>
-            <NavLink class="" href="student-association">Student Association</NavLink>
-            <NavLink class="" href="club-and-acitivity-transcript">Club and Acitivity Transcript</NavLink>
-            <NavLink class="" href="student-discipline-rules-and-regulations">Student Discipline Rules and Regulations</NavLink>
-            <NavLink class="" href="disciplinary-procedures">Disciplinary Procedures</NavLink>
-            <NavLink class="" href="health-service">Health Service</NavLink>
-            <NavLink class="" href="counseling-service">Counseling Service</NavLink>
-            <NavLink class="" href="housing">Housing</NavLink>
-            <NavLink class="" href="academic-calendar">Academic Calendar</NavLink>
-            <NavLink class="" href="exchange-programs">Exchange Programs</NavLink>
-            <NavLink class="" href="mis-dss">MIS-DSS</NavLink>
-            <NavLink class="" href="hrmis">HRMIS</NavLink>
-            <NavLink class="" href="course-spec">Course Spec</NavLink>
-            <NavLink class="" href="coure-report">Coure Report</NavLink>
-            <NavLink class="" href="psu-tpsf">PSU-TPSF</NavLink>
-            <NavLink class="" href="grade-submission-system">Grade Submission System</NavLink>
-            <NavLink class="" href="dormitory reservation">Dormitory Reservation</NavLink>
-            <NavLink class="" href="registration office">Registration Office</NavLink>
-            <NavLink class="" href="sis">SIS</NavLink>
-            <NavLink class="" href="lms">LMS</NavLink>
-            <NavLink class="" href="psu-student-loan">PSU Student Loan</NavLink>
-            <NavLink class="" href="psu-activity-transcript">PSU Activity Transcript</NavLink>
-            <NavLink class="" href="facility-booking">Facility Booking</NavLink>
-            <NavLink class="" href="psu-tes">PSU-TES</NavLink>
+        @* This was the sitemap but it has all the links from navbar, which is too much*@
+        @*<div class="col-md-6 mt-md-5 px-5 py-3 py-md-0">
+        <NavLink class="" href="history">History</NavLink>
+        <NavLink class="" href="vision-and-mission">Vision & Mission</NavLink>
+        <NavLink class="" href="executives">Executives</NavLink>
+        <NavLink class="" href="faculty-members">Faculty Members</NavLink>
+        <NavLink class="" href="staff">Staff</NavLink>
+        <NavLink class="" href="cooperate-identity">Cooperate Identity</NavLink>
+        <NavLink class="" href="annual-report">Annual Report</NavLink>
+        <NavLink class="" href="contact-us">Contact Us</NavLink>
+        <NavLink class="" href="announcements">Announcements</NavLink>
+        <NavLink class="" href="job-vacancies">Job Vacancies</NavLink>
+        <NavLink class="" href="press-and-media">Press and Media</NavLink>
+        <NavLink class="" href="cmdt">CMDT</NavLink>
+        <NavLink class="" href="ge">GE</NavLink>
+        <NavLink class="" href="student-association">Student Association</NavLink>
+        <NavLink class="" href="club-and-acitivity-transcript">Club and Acitivity Transcript</NavLink>
+        <NavLink class="" href="student-discipline-rules-and-regulations">Student Discipline Rules and Regulations</NavLink>
+        <NavLink class="" href="disciplinary-procedures">Disciplinary Procedures</NavLink>
+        <NavLink class="" href="health-service">Health Service</NavLink>
+        <NavLink class="" href="counseling-service">Counseling Service</NavLink>
+        <NavLink class="" href="housing">Housing</NavLink>
+        <NavLink class="" href="academic-calendar">Academic Calendar</NavLink>
+        <NavLink class="" href="exchange-programs">Exchange Programs</NavLink>
+        <NavLink class="" href="mis-dss">MIS-DSS</NavLink>
+        <NavLink class="" href="hrmis">HRMIS</NavLink>
+        <NavLink class="" href="course-spec">Course Spec</NavLink>
+        <NavLink class="" href="coure-report">Coure Report</NavLink>
+        <NavLink class="" href="psu-tpsf">PSU-TPSF</NavLink>
+        <NavLink class="" href="grade-submission-system">Grade Submission System</NavLink>
+        <NavLink class="" href="dormitory reservation">Dormitory Reservation</NavLink>
+        <NavLink class="" href="registration office">Registration Office</NavLink>
+        <NavLink class="" href="sis">SIS</NavLink>
+        <NavLink class="" href="lms">LMS</NavLink>
+        <NavLink class="" href="psu-student-loan">PSU Student Loan</NavLink>
+        <NavLink class="" href="psu-activity-transcript">PSU Activity Transcript</NavLink>
+        <NavLink class="" href="facility-booking">Facility Booking</NavLink>
+        <NavLink class="" href="psu-tes">PSU-TES</NavLink>
+        </div>*@
+        @*Students Sitemap*@
+        <div class="nav-item col-md d-flex flex-column align-items-center">
+            <NavLink class="nav-link">Students</NavLink>
+            <NavItem ItemName="SIS"
+                Address="https://sis-hatyai3.psu.ac.th/Default.aspx"></NavItem>
+            <NavItem ItemName="PSU-TES"
+                Address="https://tes.psu.ac.th/login.asp"></NavItem>
+            <NavItem ItemName="Registrar's Division"
+                Address="https://reg.psu.ac.th/reg/eng_index.aspx"></NavItem>
+            <NavItem ItemName="PSU Student Loan"
+                Address="https://studentloan.psu.ac.th/"></NavItem>
+            <NavItem ItemName="PSU Activity Transcript"
+                Address="https://transcript.psu.ac.th/"></NavItem>
+            <NavItem ItemName="Dormitory Reservation"
+                Address="https://dorm.psu.ac.th/system/"></NavItem>
+        </div>
+        @*Staff Sitemap*@
+        <div class="nav-item col-md d-flex flex-column align-items-center">
+            <NavLink class="nav-link">Staff</NavLink>
+            <NavItem ItemName="MIS-DSS"
+                Address="https://dss.psu.ac.th/dss_person/"></NavItem>
+            <NavItem ItemName="HRMIS"
+                Address="https://hrmis.psu.ac.th/"></NavItem>
+            <NavItem ItemName="Course Spec"
+                Address="https://course.psu.ac.th/"></NavItem>
+            <NavItem ItemName="Grade Submission System"
+                Address="https://grade.psu.ac.th/WGS2/"></NavItem>
+            <NavItem ItemName="PSU-TPSF"
+                Address="https://tpsf.psu.ac.th/"></NavItem>
+        </div>
+        @*CMDT Button*@
+        <div class="col-md d-flex flex-column align-items-center">
+            @*Background Picture + Color Filter
+            CMDT .png with responsive size
+            Text "Creative Media and Digital Technologies"
+            Button "CMDT Website"*@
         </div>
     </footer>
 </nav>

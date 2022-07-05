@@ -1,4 +1,4 @@
-﻿<NavLink class="@navClass" href="@address" >@ItemName</NavLink>
+﻿<NavLink class="@navClass" href="@Address" >@ItemName</NavLink>
 
 @* <NavLink class="nav-link" href="" Match="NavLinkMatch.All">Home</NavLink> *@
 @* <li></li> *@
@@ -9,8 +9,10 @@
 
 @code {
     private string navClass = "";
-    private string address = "";
+    //private string address = "";
     private string showName = "";
+    [Parameter]
+    public string? @Address { get; set; }
     [Parameter]
     public bool @DropDown { get; set; } = false;
     [Parameter]
@@ -24,7 +26,7 @@
     {
         if (@DropDown == false)
         {
-            address = @ItemName.Replace(" ", "-");
+            if (@Address == null) Address = @ItemName.Replace(" ", "-");
             if (@isDropdownItem == true) navClass = "dropdown-item";
             else navClass = "nav-link";
         }
