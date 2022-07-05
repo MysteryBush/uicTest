@@ -2,6 +2,23 @@
     console.log(element);
     element.innerText = text;
 }
+//Trigger an onClick event outside the child element
+//https://dev.to/hamsahn/trigger-an-onclick-event-outside-the-child-element-works-for-nested-child-components-too-abf
+//This is to make the navbar dropdown close itself when clicking outside of it
+/*useEffect(() => {
+    //on component mount, click event listener is added to the parent div
+    document.getElementById('NavbarParent').onclick = function (e) {
+        var topLevelChild = document.getElementById('top-level-child')
+        //Making sure to exclude the top-level child component
+        if (topLevel && !topLevelChild.contains(e.target)) {
+            closeNavDropdownDesktop()
+        }
+    }
+    //On component will unmount, click event listener is removed on parent div
+    return () => {
+        document.getElementById("NavbarParent").removeEventListener('click', closeNavDropdownDesktop)
+    }
+}, [])*/
 
 function toggleNavDropDown(dropdown) {
     var element = dropdown;
@@ -39,7 +56,6 @@ function hideNavDropDown(dropdown) {
     var element = dropdown;
     element.classList.add("dropdown-hide");
     element.classList.remove("dropdown-show");
-
 }
 
 function swipeUp(div) {
@@ -65,6 +81,17 @@ function toggleNavDropdownDesktop(element, navClass) {
         showDropdown.classList.remove("dropdown-hide");
     }
 }
+
+//function to close dropdown, this is used when clicking outside the navbar
+/*function closeNavDropdownDesktop(navClass) {
+    var hideDropdown = document.getElementsByClassName(navClass);
+    for (i = 0; i < hideDropdown.length; i++) {
+        if (hideDropdown[i].classList.contains("dropdown-show")) {
+            hideDropdown[i].classList.remove("dropdown-show");
+            hideDropdown[i].classList.add("dropdown-hide");
+        }
+    }
+}*/
 
 //This one makes other unfocused child to hide themself
 //function toggleNavDropdownDesktopChild(element, parent, navClass) {
