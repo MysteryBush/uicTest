@@ -667,6 +667,13 @@ nav > .container-fluid {
 footer {
   background-color: #3A5E80;
 }
+footer .footer-brand > img {
+  padding: 0px;
+  margin: 0px;
+  width: 200px;
+  height: 70px;
+  object-fit: cover;
+}
 footer p, footer span {
   font-family: "PSU Stidti";
   font-style: normal;
@@ -678,7 +685,7 @@ footer p, footer span {
   line-height: 20px;
 }
 footer p.bold {
-  font-weight: 400;
+  font-weight: 550;
   font-size: 12px;
   line-height: 24px;
 }
@@ -687,6 +694,24 @@ footer p {
 }
 footer a {
   color: #FFFFFF;
+}
+footer a.nav-link {
+  font-size: 16px;
+}
+footer a.nav-link.bold {
+  font-size: 20px;
+}
+footer .cmdt-bg {
+  background-image: url(../images/CMDT-Banner.jpg);
+  /*background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;*/
+  height: 250px;
+}
+footer .cmdt-logo > img {
+  height: 35px;
+  object-fit: cover;
 }
 
 @media (min-width: 1200px) {
@@ -700,8 +725,13 @@ footer a {
     font-size: 18px;
     line-height: 31px;
   }
+  footer a.nav-link {
+    font-size: 20px;
+  }
+  footer a.nav-link.bold {
+    font-size: 24px;
+  }
 }
-/*Prevent the first footer child to set text to center prematurely*/
 /* #endregion */
 /* #region container-popup */
 .text2 p, .text1 p {
@@ -845,6 +875,7 @@ footer a {
   background-size: cover;
 }
 .header-home__cover-container {
+  width: 70%;
   height: 230px;
   z-index: -1;
   display: flex;
@@ -862,7 +893,10 @@ footer a {
   /* Using math for calculating responsive ness*/
   /*width: 1101px;*/
   height: 150px;
-  background-color: rgb(0, 60, 113);
+  width: 30%;
+}
+.header-home__background-gradient {
+  background-image: linear-gradient(to right, rgb(0, 60, 113) 36.23%, rgba(255, 255, 255, 0.62) 62.59%, rgba(255, 255, 255, 0) 75.37%);
 }
 .header-home__label {
   width: 100%;
@@ -941,7 +975,7 @@ footer a {
 }
 @media (min-width: 768px) {
   .header-home .header-home__background {
-    width: 43%;
+    width: 30%;
     height: 545px;
   }
   .header-home .header-home__cover {
@@ -949,7 +983,7 @@ footer a {
     background-position: right;
   }
   .header-home .header-home__cover-container {
-    width: 57%;
+    width: 70%;
     height: 545px;
   }
   .header-home .header-home__label {

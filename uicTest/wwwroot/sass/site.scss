@@ -42,6 +42,7 @@ $footer-color: $secondary-color;
 /* Assets */
 
 $Background-Image-Cover: url(../images/psuic-background-image-alpha.png);
+$Background-Image-Footer-CMDT: url(../images/CMDT-Banner.jpg);
 
 /* Media Resolution */
 
@@ -557,7 +558,7 @@ nav {
     /*padding: 0.5rem;*/
 
     &:first-of-type {
-        /*padding-top: 1rem;*/
+        /*padding-top: 1rem;*/ 
     }
 
     &:last-of-type {
@@ -817,6 +818,13 @@ nav {
 
 footer {
     background-color: $footer-color;
+    //PSUIC Logo at footer
+    .footer-brand > img {
+        @include no-padding-margin;
+        width: 200px;
+        height: 70px;
+        object-fit: cover;
+    }
 
     p, span {
         font-family: 'PSU Stidti';
@@ -830,7 +838,7 @@ footer {
     }
 
     p.bold {
-        font-weight: 400;
+        font-weight: 550;
         font-size: 12px;
         line-height: 24px;
     }
@@ -842,15 +850,31 @@ footer {
     a {
         color: $light-color;
     }
+
+    a.nav-link {
+        font-size: 16px;
+
+        &.bold {
+            font-size: 20px;
+        }
+    }
+    //CMDT background image
+    .cmdt-bg {
+        //overflow: hidden;
+        background-image: $Background-Image-Footer-CMDT;
+        /*background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 2;*/
+        height: 250px;
+        //height: 100%;
+    }
+    //CMDT Logo
+    .cmdt-logo > img {
+        height: 35px;
+        object-fit: cover;
+    }
 }
-
-//footer > .col-md:nth-child(1) {
-//    flex-grow: 1;
-//}
-
-//footer > .col-md:nth-child(2) {
-//    flex-grow: 1;
-//}
 
 @media (min-width: $grid-breakpoints-xl) {
     footer {
@@ -865,23 +889,15 @@ footer {
             font-size: 18px;
             line-height: 31px;
         }
+
+        a.nav-link {
+            font-size: 20px;
+            &.bold {
+                font-size: 24px;
+            }
+        }
     }
-
-    //footer > .col-md:nth-child(1) {
-    //    flex-grow: 10;
-    //}
-
-    //footer > .col-md:nth-child(2) {
-    //    flex-grow: 9;
-    //}
 }
-/*Prevent the first footer child to set text to center prematurely*/
-//@media (min-width: 737.78px) {
-//    .force-justify-start p {
-//        display: flex;
-//        justify-items: start;
-//    }
-//}
 /* #endregion */
 /* #region container-popup */
 %p-margin {
@@ -1034,6 +1050,8 @@ footer {
         background-size: cover;
 
         &-container {
+            // 70% if using gradient background
+            width: 70%;
             //width: 100%;
             height: 230px;
             z-index: -1;
@@ -1057,8 +1075,16 @@ footer {
         @debug 1101% / 1920% * 100%;
         //width: 1101% / 1920% * 100%;
         height: 150px;
-        background-color: rgba(0, 60, 113, 1);
+        //background-color: rgba(0, 60, 113, 1);
         //background-size: cover;
+        // 30% if using gradient background
+        width: 30%;
+    }
+
+    &__background-gradient {
+        //position: absolute;
+        background-image: linear-gradient(to right, rgba(0, 60, 113, 1) 36.23%, rgba(255, 255, 255, 0.62) 62.59%, rgba(255, 255, 255, 0) 75.37%);
+        //z-index: 0;
     }
 
     &__label {
@@ -1167,7 +1193,10 @@ footer {
     @include media($grid-breakpoints-md) {
         .header-home {
             &__background {
-                width: 43%;
+                // 43% if not using gradient background
+                //width: 43%;
+                // 30% if using gradient background
+                width: 30%;
                 height: 545px;
             }
 
@@ -1177,7 +1206,10 @@ footer {
             }
 
             &__cover-container {
-                width: 57%;
+                // 57% if not using gradient background
+                //width: 57%;
+                // 70% if using gradient background
+                width: 70%;
                 height: 545px;
             }
 

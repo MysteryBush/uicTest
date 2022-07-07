@@ -2,12 +2,12 @@
 
 <nav>
     <footer class="d-flex flex-column align-items-center flex-md-row align-items-md-start justify-content-between px-5 py-3">
-        <div class="col-md  d-flex flex-column align-content-center mt-5 me-md-5">
+        <div class="col-md  d-flex flex-column align-content-start">
             @*<span class="text-white">© PRINCE OF SONGKLA UNIVERSITY INTERNATIONAL COLLEGE 2022</span>*@
             @*<img src="../images/psuic-logo.png" alt="">*@
-            <div class="">
-                <img class="img-fluid" src="../images/psuic-logo.png" alt="">
-            </div>
+            <a class="footer-brand d-flex justify-content-center justify-content-md-start">
+                <img src="../images/psuic-logo.png" alt="">
+            </a>
             <p class="bold">PRINCE OF SONGKLA UNIVERSITY INTERNATIONAL COLLEGE</p>
             <p>12th floor, Learning Resource Center (LRC)</p>
             <p>15 Kanjanvanich Road, Hat Yai, Songkhla 90110</p>
@@ -53,43 +53,50 @@
         <NavLink class="" href="psu-tes">PSU-TES</NavLink>
         </div>*@
         @*Students Sitemap*@
-        <div class="nav-item col-md d-flex flex-column align-items-center">
-            <NavLink class="nav-link">Students</NavLink>
+        <div class="nav-item col-md d-flex flex-column align-items-center align-items-md-start">
+            <NavLink class="nav-link bold">Students</NavLink>
             <NavItem ItemName="SIS"
-                Address="https://sis-hatyai3.psu.ac.th/Default.aspx"></NavItem>
+                     Address="https://sis-hatyai3.psu.ac.th/Default.aspx"></NavItem>
             <NavItem ItemName="PSU-TES"
-                Address="https://tes.psu.ac.th/login.asp"></NavItem>
+                     Address="https://tes.psu.ac.th/login.asp"></NavItem>
             <NavItem ItemName="Registrar's Division"
-                Address="https://reg.psu.ac.th/reg/eng_index.aspx"></NavItem>
+                     Address="https://reg.psu.ac.th/reg/eng_index.aspx"></NavItem>
             <NavItem ItemName="PSU Student Loan"
-                Address="https://studentloan.psu.ac.th/"></NavItem>
+                     Address="https://studentloan.psu.ac.th/"></NavItem>
             <NavItem ItemName="PSU Activity Transcript"
-                Address="https://transcript.psu.ac.th/"></NavItem>
+                     Address="https://transcript.psu.ac.th/"></NavItem>
             <NavItem ItemName="Dormitory Reservation"
-                Address="https://dorm.psu.ac.th/system/"></NavItem>
+                     Address="https://dorm.psu.ac.th/system/"></NavItem>
         </div>
         @*Staff Sitemap*@
-        <div class="nav-item col-md d-flex flex-column align-items-center">
-            <NavLink class="nav-link">Staff</NavLink>
+        <div class="nav-item col-md d-flex flex-column align-items-center align-items-md-start">
+            <NavLink class="nav-link bold">Staff</NavLink>
             <NavItem ItemName="MIS-DSS"
-                Address="https://dss.psu.ac.th/dss_person/"></NavItem>
+                     Address="https://dss.psu.ac.th/dss_person/"></NavItem>
             <NavItem ItemName="HRMIS"
-                Address="https://hrmis.psu.ac.th/"></NavItem>
+                     Address="https://hrmis.psu.ac.th/"></NavItem>
             <NavItem ItemName="Course Spec"
-                Address="https://course.psu.ac.th/"></NavItem>
+                     Address="https://course.psu.ac.th/"></NavItem>
             <NavItem ItemName="Grade Submission System"
-                Address="https://grade.psu.ac.th/WGS2/"></NavItem>
+                     Address="https://grade.psu.ac.th/WGS2/"></NavItem>
             <NavItem ItemName="PSU-TPSF"
-                Address="https://tpsf.psu.ac.th/"></NavItem>
+                     Address="https://tpsf.psu.ac.th/"></NavItem>
         </div>
         @*CMDT Button*@
-        <div class="col-md d-flex flex-column align-items-center">
+        <div class="cmdt-bg col-md container-fluid d-flex flex-column align-content-center align-items-center justify-content-center">
             @*Background Picture + Color Filter
             CMDT .png with responsive size
             Text "Creative Media and Digital Technologies"
             Button "CMDT Website"*@
+            <div class="container d-flex flex-column align-items-center justify-content-center">
+                <div class="cmdt-logo">
+                    <img src="../images/cmdtLogo.png" alt="CMDT Logo">
+                </div>
+                <p>Creative Media and Digital Technologies</p>
+                <button type="button" class="btn btn-outline-secondary" href="https://cmdt-uic.psu.ac.th/">CMDT Website</button>
+            </div>
         </div>
-    </footer>
+    </footer> 
 </nav>
 @*<ul class="nav col-md list-unstyled d-flex justify-content-center justify-content-md-end">
             <li class="ms-3"><a class="text-white" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#web"></use></svg></a>
